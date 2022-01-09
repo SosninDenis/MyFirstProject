@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D3BE48B278B61CA001885C0 /* ScreenAfterLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3BE48A278B61CA001885C0 /* ScreenAfterLoginViewController.swift */; };
 		9DD986EF27877AC600C64C93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD986EE27877AC600C64C93 /* AppDelegate.swift */; };
 		9DD986F127877AC600C64C93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD986F027877AC600C64C93 /* SceneDelegate.swift */; };
 		9DD986F627877AC600C64C93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD986F427877AC600C64C93 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D3BE48A278B61CA001885C0 /* ScreenAfterLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenAfterLoginViewController.swift; sourceTree = "<group>"; };
 		9DD986EB27877AC600C64C93 /* ChatALittle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatALittle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD986EE27877AC600C64C93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DD986F027877AC600C64C93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				9DD986EE27877AC600C64C93 /* AppDelegate.swift */,
 				9DD986F027877AC600C64C93 /* SceneDelegate.swift */,
 				9DD986F427877AC600C64C93 /* Main.storyboard */,
+				9D3BE48A278B61CA001885C0 /* ScreenAfterLoginViewController.swift */,
 				9DD987062788D93A00C64C93 /* LoginFormController.swift */,
 				9DD986F727877AC700C64C93 /* Assets.xcassets */,
 				9DD986F927877AC700C64C93 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DD987072788D93A00C64C93 /* LoginFormController.swift in Sources */,
+				9D3BE48B278B61CA001885C0 /* ScreenAfterLoginViewController.swift in Sources */,
 				9DD986EF27877AC600C64C93 /* AppDelegate.swift in Sources */,
 				9DD986F127877AC600C64C93 /* SceneDelegate.swift in Sources */,
 			);
