@@ -55,6 +55,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Войти"/>
                                 <connections>
                                     <action selector="didTapButtonLogin:" destination="zhr-lA-MuB" eventType="touchUpInside" id="xgx-3Q-MYn"/>
+                                    <segue destination="7yp-yw-QKV" kind="show" id="nIK-B1-FoP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBy-3C-awH">
@@ -79,7 +80,6 @@
                         <outlet property="loginTF" destination="rj0-Wa-W9A" id="hEU-wN-jYu"/>
                         <outlet property="passwordTF" destination="YYd-FB-WEq" id="Jhp-1Q-hHg"/>
                         <outlet property="singUpButton" destination="Apz-Ky-Rz7" id="DAc-nu-F7P"/>
-                        <segue destination="7yp-yw-QKV" kind="show" identifier="goToStartView" id="v5t-eZ-LME"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FtX-g4-StL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
