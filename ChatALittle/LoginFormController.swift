@@ -9,22 +9,26 @@ import UIKit
 
 class LoginFormController: UIViewController {
 
-
     @IBOutlet weak var loginTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var singUpButton: UIButton!
     @IBOutlet weak var forgotPasswordButton: UIButton!
     
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//    }
 
     @IBAction func didTapButtonLogin(_ sender: Any) { //кнопка залогиниться
-            //performSegue(withIdentifier: "goToStartView", sender: nil)
+    }
+
+    // переход на страницу регистрации минуя проверку пароля
+    @IBAction func didTapButtonSingUp(_ sender: UIButton) {
+            performSegue(withIdentifier: "goToViewSingUp", sender: nil)
+    }
+    // переход на страницу восстановления пароля минуя проверку пароля
+    @IBAction func didTapButtonForgotPass(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToViewForgotPass", sender: nil)
     }
     
     @IBAction func unwindSegurToMainScreen(segue: UIStoryboardSegue) {
@@ -39,7 +43,6 @@ class LoginFormController: UIViewController {
             if !checkResult {
                 showLoginError()
             }
-            
             // Вернем результат
             return checkResult
         }
@@ -65,15 +68,20 @@ class LoginFormController: UIViewController {
             // Показываем UIAlertController
             present(alter, animated: true, completion: nil)
         }
-//Функция передачи данных на второй экран
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let dvc = segue.destination as? ScreenAfterLoginViewController else { return }
-        dvc.login = loginTF.text
-    }
+    //Функция передачи данных на второй экран c profile
+    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //        guard let dvc = segue.destination as? ScreenAfterLoginViewController else { return }
+    //        dvc.login = loginTF.text
+    //    }
+    
     // Функция для пропадания клавиатуры про окончании ввода
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    
+    
+    
     
     
     
