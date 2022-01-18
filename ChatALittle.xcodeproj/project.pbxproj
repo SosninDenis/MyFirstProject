@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D3BE48B278B61CA001885C0 /* ScreenAfterLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3BE48A278B61CA001885C0 /* ScreenAfterLoginViewController.swift */; };
 		9DD986EF27877AC600C64C93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD986EE27877AC600C64C93 /* AppDelegate.swift */; };
 		9DD986F127877AC600C64C93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD986F027877AC600C64C93 /* SceneDelegate.swift */; };
 		9DD986F627877AC600C64C93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD986F427877AC600C64C93 /* Main.storyboard */; };
 		9DD986F827877AC700C64C93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD986F727877AC700C64C93 /* Assets.xcassets */; };
 		9DD986FB27877AC700C64C93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD986F927877AC700C64C93 /* LaunchScreen.storyboard */; };
 		9DD987072788D93A00C64C93 /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD987062788D93A00C64C93 /* LoginFormController.swift */; };
+		9DF4991927935C0700337F62 /* SingUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4991827935C0700337F62 /* SingUpViewController.swift */; };
+		9DF4991B27935C1600337F62 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4991A27935C1600337F62 /* ForgotPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D3BE48A278B61CA001885C0 /* ScreenAfterLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenAfterLoginViewController.swift; sourceTree = "<group>"; };
 		9DD986EB27877AC600C64C93 /* ChatALittle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatALittle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD986EE27877AC600C64C93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DD986F027877AC600C64C93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		9DD986FA27877AC700C64C93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DD986FC27877AC700C64C93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DD987062788D93A00C64C93 /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
+		9DF4991827935C0700337F62 /* SingUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewController.swift; sourceTree = "<group>"; };
+		9DF4991A27935C1600337F62 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 				9DD986EE27877AC600C64C93 /* AppDelegate.swift */,
 				9DD986F027877AC600C64C93 /* SceneDelegate.swift */,
 				9DD986F427877AC600C64C93 /* Main.storyboard */,
+				9DF4991827935C0700337F62 /* SingUpViewController.swift */,
+				9DF4991A27935C1600337F62 /* ForgotPasswordViewController.swift */,
+				9D3BE48A278B61CA001885C0 /* ScreenAfterLoginViewController.swift */,
 				9DD987062788D93A00C64C93 /* LoginFormController.swift */,
 				9DD986F727877AC700C64C93 /* Assets.xcassets */,
 				9DD986F927877AC700C64C93 /* LaunchScreen.storyboard */,
@@ -139,6 +148,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DD987072788D93A00C64C93 /* LoginFormController.swift in Sources */,
+				9D3BE48B278B61CA001885C0 /* ScreenAfterLoginViewController.swift in Sources */,
+				9DF4991B27935C1600337F62 /* ForgotPasswordViewController.swift in Sources */,
+				9DF4991927935C0700337F62 /* SingUpViewController.swift in Sources */,
 				9DD986EF27877AC600C64C93 /* AppDelegate.swift in Sources */,
 				9DD986F127877AC600C64C93 /* SceneDelegate.swift in Sources */,
 			);
