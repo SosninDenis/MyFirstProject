@@ -9,7 +9,7 @@ import UIKit
 
 class FriendsListTableViewController: UITableViewController {
     
-    var contactList = ["asd", "asdasd", "asdasd"]
+    var contactList = ["Иван Петров", "Даздраперма Комсомолова", "Авербух Цукерман", "12345","12345","12345","12345","12345","12345","12345","12345","12345","12345","12345","12345","12345","12345","12345","12345","12345","12345"]
     
     
     
@@ -40,13 +40,21 @@ class FriendsListTableViewController: UITableViewController {
 
   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCellId", for: indexPath) as! FriendsTableViewCell
-
         let name = contactList[indexPath.row]
+        if indexPath.row % 2 == 0 {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCellId", for: indexPath) as! FriendsTableViewCell
+            cell.backgroundColor = .darkGray
         cell.friendsNameLabel?.text = name
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCellId", for: indexPath) as! FriendsTableViewCell
+                cell.backgroundColor = .gray
+            cell.friendsNameLabel?.text = name
+            return cell
+        }
         // Configure the cell...
 
-        return cell
+
     }
 
     /*
