@@ -19,7 +19,7 @@ class LoginFormController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func didTapButtonLogin(_ sender: Any) { //кнопка залогиниться
+    @IBAction func didTapButtonLogin(_ sender: Any) {
     }
     
     // переход на страницу регистрации минуя проверку пароля

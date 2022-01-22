@@ -37,7 +37,9 @@ class GlobalGroupListTableViewController: UITableViewController {
         return globalGroupList.count
     }
     
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "addGroup", sender: nil)
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let name = globalGroupList[indexPath.row].groupName
@@ -60,8 +62,6 @@ class GlobalGroupListTableViewController: UITableViewController {
     }
 
 }
-
-
 
 private extension GlobalGroupListTableViewController {
     func registerTableViewCells() {

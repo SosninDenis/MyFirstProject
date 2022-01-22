@@ -9,7 +9,7 @@ import UIKit
 
 class FriendsListTableViewController: UITableViewController {
     
-    var contactList: [FriendsListCellModel] = [.init(name: "BaraKK", surnName: "Abama", imageName: "barak"), .init(name: "Мерлин", surnName: "Мансоне", imageName: "merlin"), .init(name: "Светлана", surnName: "Васильева", imageName: "women2"), .init(name: "Игорь Петрович", surnName: "Ю", imageName: "oldMan"), .init(name: "Гадя Петрович", surnName: "Хренова", imageName: "gadya")]
+    var contactList: [FriendsListCellModel] = [.init(name: "BaraKK", surnName: "Abama", imageName: "barak", userID: 1), .init(name: "Мерлин", surnName: "Мансоне", imageName: "merlin", userID: 2), .init(name: "Светлана", surnName: "Васильева", imageName: "women2", userID: 3), .init(name: "Игорь Петрович", surnName: "Ю", imageName: "oldMan", userID: 4), .init(name: "Гадя Петрович", surnName: "Хренова", imageName: "gadya", userID: 5)]
 
     
     override func viewDidLoad() {
@@ -36,7 +36,9 @@ class FriendsListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("нажата строка № \(indexPath.row) в секции \(indexPath.section)")
+        //let segueToPhoto = contactList[indexPath.row].userID
+        performSegue(withIdentifier: "UserPhoto", sender: nil)
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

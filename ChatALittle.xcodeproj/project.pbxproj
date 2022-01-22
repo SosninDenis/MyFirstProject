@@ -14,6 +14,10 @@
 		9D2BDAE72799F7A700AAC23A /* FriendsListCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BDAE62799F7A700AAC23A /* FriendsListCellModel.swift */; };
 		9D2BDAE9279B3A6100AAC23A /* GroupListCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BDAE8279B3A6100AAC23A /* GroupListCellModel.swift */; };
 		9D2BDAEC279B49FB00AAC23A /* GlobalGroupListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BDAEB279B49FB00AAC23A /* GlobalGroupListTableViewController.swift */; };
+		9D2BDAF1279C8F3000AAC23A /* FriedsPhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BDAF0279C8F3000AAC23A /* FriedsPhotoCollectionViewController.swift */; };
+		9D2BDAF3279C998000AAC23A /* UsersPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BDAF2279C998000AAC23A /* UsersPhotoModel.swift */; };
+		9D2BDAF6279CA49400AAC23A /* UserPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BDAF4279CA49400AAC23A /* UserPhotoCollectionViewCell.swift */; };
+		9D2BDAF7279CA49400AAC23A /* UserPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D2BDAF5279CA49400AAC23A /* UserPhotoCollectionViewCell.xib */; };
 		9D3BE48B278B61CA001885C0 /* ScreenAfterLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3BE48A278B61CA001885C0 /* ScreenAfterLoginViewController.swift */; };
 		9DD986EF27877AC600C64C93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD986EE27877AC600C64C93 /* AppDelegate.swift */; };
 		9DD986F127877AC600C64C93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD986F027877AC600C64C93 /* SceneDelegate.swift */; };
@@ -33,6 +37,10 @@
 		9D2BDAE62799F7A700AAC23A /* FriendsListCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListCellModel.swift; sourceTree = "<group>"; };
 		9D2BDAE8279B3A6100AAC23A /* GroupListCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListCellModel.swift; sourceTree = "<group>"; };
 		9D2BDAEB279B49FB00AAC23A /* GlobalGroupListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalGroupListTableViewController.swift; sourceTree = "<group>"; };
+		9D2BDAF0279C8F3000AAC23A /* FriedsPhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriedsPhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		9D2BDAF2279C998000AAC23A /* UsersPhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPhotoModel.swift; sourceTree = "<group>"; };
+		9D2BDAF4279CA49400AAC23A /* UserPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		9D2BDAF5279CA49400AAC23A /* UserPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		9D3BE48A278B61CA001885C0 /* ScreenAfterLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenAfterLoginViewController.swift; sourceTree = "<group>"; };
 		9DD986EB27877AC600C64C93 /* ChatALittle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatALittle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD986EE27877AC600C64C93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +87,7 @@
 			children = (
 				9D2BDAE62799F7A700AAC23A /* FriendsListCellModel.swift */,
 				9D2BDAE8279B3A6100AAC23A /* GroupListCellModel.swift */,
+				9D2BDAF2279C998000AAC23A /* UsersPhotoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -98,6 +107,8 @@
 			children = (
 				9D2BDADB27989D5B00AAC23A /* FriendsTableViewCell.swift */,
 				9D2BDADC27989D5B00AAC23A /* FriendsTableViewCell.xib */,
+				9D2BDAF4279CA49400AAC23A /* UserPhotoCollectionViewCell.swift */,
+				9D2BDAF5279CA49400AAC23A /* UserPhotoCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -106,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				9D2BDAD827989C8300AAC23A /* FriendsListTableViewController.swift */,
+				9D2BDAF0279C8F3000AAC23A /* FriedsPhotoCollectionViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -207,6 +219,7 @@
 				9DD986F827877AC700C64C93 /* Assets.xcassets in Resources */,
 				9DD986F627877AC600C64C93 /* Main.storyboard in Resources */,
 				9D2BDADE27989D5B00AAC23A /* FriendsTableViewCell.xib in Resources */,
+				9D2BDAF7279CA49400AAC23A /* UserPhotoCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,9 +231,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DD987072788D93A00C64C93 /* LoginFormController.swift in Sources */,
+				9D2BDAF3279C998000AAC23A /* UsersPhotoModel.swift in Sources */,
 				9D2BDAE22799E44C00AAC23A /* GroupListTableViewController.swift in Sources */,
 				9D2BDAE9279B3A6100AAC23A /* GroupListCellModel.swift in Sources */,
 				9D3BE48B278B61CA001885C0 /* ScreenAfterLoginViewController.swift in Sources */,
+				9D2BDAF6279CA49400AAC23A /* UserPhotoCollectionViewCell.swift in Sources */,
 				9DF4991B27935C1600337F62 /* ForgotPasswordViewController.swift in Sources */,
 				9D2BDADD27989D5B00AAC23A /* FriendsTableViewCell.swift in Sources */,
 				9D2BDAE72799F7A700AAC23A /* FriendsListCellModel.swift in Sources */,
@@ -228,6 +243,7 @@
 				9D2BDAEC279B49FB00AAC23A /* GlobalGroupListTableViewController.swift in Sources */,
 				9DD986EF27877AC600C64C93 /* AppDelegate.swift in Sources */,
 				9DD986F127877AC600C64C93 /* SceneDelegate.swift in Sources */,
+				9D2BDAF1279C8F3000AAC23A /* FriedsPhotoCollectionViewController.swift in Sources */,
 				9D2BDAD927989C8300AAC23A /* FriendsListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

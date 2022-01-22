@@ -11,4 +11,5 @@ struct FriendsListCellModel {
     let name: String
     let surnName: String
     let imageName: String
+    let userID: Int
 }
