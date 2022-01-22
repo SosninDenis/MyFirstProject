@@ -8,12 +8,12 @@
 import UIKit
 
 class SingUpViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     @IBAction func didTapbButtonGoBack(_ sender: Any) {
         performSegue(withIdentifier: "unwindSegue", sender: nil)
     }
-
+    
 }

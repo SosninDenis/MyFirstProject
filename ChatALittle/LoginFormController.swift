@@ -68,11 +68,6 @@ class LoginFormController: UIViewController {
         // Показываем UIAlertController
         present(alter, animated: true, completion: nil)
     }
-    //Функция передачи данных на второй экран c profile
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        guard let dvc = segue.destination as? ScreenAfterLoginViewController else { return }
-    //        dvc.login = loginTF.text
-    //    }
     
     // Функция для пропадания клавиатуры про окончании ввода
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

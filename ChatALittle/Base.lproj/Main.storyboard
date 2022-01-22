@@ -102,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="4420" y="-734"/>
         </scene>
-        <!--Gropu List Table View Controller-->
+        <!--Group List Table View Controller-->
         <scene sceneID="Stg-aM-BOL">
             <objects>
-                <tableViewController modalPresentationStyle="fullScreen" id="ZUq-2h-bje" customClass="GropuListTableViewController" customModule="ChatALittle" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="ZUq-2h-bje" customClass="GroupListTableViewController" customModule="ChatALittle" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Jot-En-K7B">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,10 +140,10 @@
             </objects>
             <point key="canvasLocation" x="2474" y="521"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Global Group List Table View Controller-->
         <scene sceneID="lNn-YW-KH7">
             <objects>
-                <tableViewController modalPresentationStyle="fullScreen" id="Wa2-Ho-DyP" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="Wa2-Ho-DyP" customClass="GlobalGroupListTableViewController" customModule="ChatALittle" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="jMu-75-FIM">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,6 +156,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="428" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ZxQ-ET-g6i" kind="unwind" identifier="addGroup" unwindAction="addGroupWithSegue:" id="F3L-nh-IY7"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -166,6 +169,7 @@
                     <navigationItem key="navigationItem" id="iaN-sJ-Cg7"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SG1-N4-NM5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ZxQ-ET-g6i" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3537" y="521"/>
         </scene>

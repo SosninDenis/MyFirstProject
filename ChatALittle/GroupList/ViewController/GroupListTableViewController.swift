@@ -1,16 +1,17 @@
 //
-//  FriendsListTableViewController.swift
+//  GropuListTableViewController.swift
 //  ChatALittle
 //
-//  Created by Денис Соснин on 19.01.2022.
+//  Created by Денис Соснин on 20.01.2022.
 //
 
 import UIKit
 
-class FriendsListTableViewController: UITableViewController {
+class GroupListTableViewController: UITableViewController {
     
-    var contactList: [FriendsListCellModel] = [.init(name: "BaraKK", surnName: "Abama", imageName: "barak"), .init(name: "Мерлин", surnName: "Мансоне", imageName: "merlin"), .init(name: "Светлана", surnName: "Васильева", imageName: "women2"), .init(name: "Игорь Петрович", surnName: "Ю", imageName: "oldMan"), .init(name: "Гадя Петрович", surnName: "Хренова", imageName: "gadya")]
-
+    
+    var groupList: [GroupListCellModel] = [.init(groupName: "BMW CLub", groupImage: "bmw")]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,6 @@ class FriendsListTableViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
         registerTableViewCells()
         
     }
@@ -28,25 +28,25 @@ class FriendsListTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contactList.count
+        // #warning Incomplete implementation, return the number of rows
+        return groupList.count
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("нажата строка № \(indexPath.row) в секции \(indexPath.section)")
-    }
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let name = contactList[indexPath.row].name + " " + contactList[indexPath.row].surnName
-        let image = contactList[indexPath.row].imageName
+        let name = groupList[indexPath.row].groupName
+        let image = groupList[indexPath.row].groupImage
         if indexPath.row % 2 == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCellId", for: indexPath) as! FriendsTableViewCell
             cell.backgroundColor = .darkGray
-            cell.friendsNameLabel?.text = name
             cell.imageViewName.image = UIImage(named: image)
+            cell.friendsNameLabel?.text = name
             cell.accessoryType = .disclosureIndicator
             return cell
         } else {
@@ -57,28 +57,42 @@ class FriendsListTableViewController: UITableViewController {
             cell.accessoryType = .disclosureIndicator
             return cell
         }
-        
-        
-        
     }
+    
+    @IBAction func addGroup(segue: UIStoryboardSegue) {
+        
+        // Проверяем идентификатор, чтобы убедиться, что это нужный переход
+        if segue.identifier == "addGroup" {
+            // Получаем ссылку на контроллер, с которого осуществлен переход
+            let globalGroupListController = segue.source as! GlobalGroupListTableViewController
+            
+            // Получаем индекс выделенной ячейки
+            if let indexPath = globalGroupListController.tableView.indexPathForSelectedRow {
+                let group = globalGroupListController.globalGroupList[indexPath.row]
+                groupList.append(group)
+                tableView.reloadData()
+            }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // Если была нажата кнопка «Удалить»
+        if editingStyle == .delete {
+            // Удаляем группу из массива
+            groupList.remove(at: indexPath.row)
+            // И удаляем строку из таблицы
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    
+    
     
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
      // Return false if you do not want the specified item to be editable.
      return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }    
      }
      */
     
@@ -107,12 +121,10 @@ class FriendsListTableViewController: UITableViewController {
      }
      */
     
-    
 }
 
-private extension FriendsListTableViewController {
+private extension GroupListTableViewController {
     func registerTableViewCells() {
         tableView.register(FriendsTableViewCell.nib(), forCellReuseIdentifier: "FriendsTableViewCellId")
     }
 }
-
