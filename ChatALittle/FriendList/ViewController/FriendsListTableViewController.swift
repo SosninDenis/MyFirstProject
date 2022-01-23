@@ -10,19 +10,11 @@ import UIKit
 class FriendsListTableViewController: UITableViewController {
     
     var contactList: [FriendsListCellModel] = [.init(name: "BaraKK", surnName: "Abama", imageName: "barak", userID: 1), .init(name: "Мерлин", surnName: "Мансоне", imageName: "merlin", userID: 2), .init(name: "Светлана", surnName: "Васильева", imageName: "women2", userID: 3), .init(name: "Игорь Петрович", surnName: "Ю", imageName: "oldMan", userID: 4), .init(name: "Гадя Петрович", surnName: "Хренова", imageName: "gadya", userID: 5)]
-
+    var moveUserIdToPhoto: Int = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
         registerTableViewCells()
-        
     }
     
     // MARK: - Table view data source
@@ -36,9 +28,17 @@ class FriendsListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let segueToPhoto = contactList[indexPath.row].userID
-        performSegue(withIdentifier: "UserPhoto", sender: nil)
+        let segueToPhoto = contactList[indexPath.row].userID
+        performSegue(withIdentifier: "UserPhoto", sender: segueToPhoto)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "UserPhoto",
+           let friedsPhotoCollectionViewController = segue.destination as? FriedsPhotoCollectionViewController,
+           let userId = sender as? Int {
+            friedsPhotoCollectionViewController.currentUser = userId - 1
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,10 +59,8 @@ class FriendsListTableViewController: UITableViewController {
             cell.accessoryType = .disclosureIndicator
             return cell
         }
-        
-        
-        
     }
+    
     
     /*
      // Override to support conditional editing of the table view.
@@ -80,7 +78,7 @@ class FriendsListTableViewController: UITableViewController {
      tableView.deleteRows(at: [indexPath], with: .fade)
      } else if editingStyle == .insert {
      // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }    
+     }
      }
      */
     
@@ -108,8 +106,7 @@ class FriendsListTableViewController: UITableViewController {
      // Pass the selected object to the new view controller.
      }
      */
-    
-    
+  
 }
 
 private extension FriendsListTableViewController {
@@ -117,4 +114,7 @@ private extension FriendsListTableViewController {
         tableView.register(FriendsTableViewCell.nib(), forCellReuseIdentifier: "FriendsTableViewCellId")
     }
 }
+
+
+
 

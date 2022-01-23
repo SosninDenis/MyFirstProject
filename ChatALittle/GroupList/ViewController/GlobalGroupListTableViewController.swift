@@ -8,20 +8,11 @@
 import UIKit
 
 class GlobalGroupListTableViewController: UITableViewController {
-
-    
     
     var globalGroupList: [GroupListCellModel] = [.init(groupName: "BMW CLub", groupImage: "bmw"), .init(groupName: "ФК Зенит", groupImage: "zenit"), .init(groupName: "Сбербанк", groupImage: "sber"), .init(groupName: "News", groupImage: "news")]
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         registerTableViewCells()
     }
     
@@ -60,7 +51,7 @@ class GlobalGroupListTableViewController: UITableViewController {
             return cell
         }
     }
-
+    
 }
 
 private extension GlobalGroupListTableViewController {
