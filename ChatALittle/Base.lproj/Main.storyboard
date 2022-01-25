@@ -37,7 +37,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="LJZ-by-3f9">
-                        <barButtonItem key="rightBarButtonItem" title="Global groups" id="A6k-zj-MMi">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="A6k-zj-MMi">
                             <connections>
                                 <segue destination="Wa2-Ho-DyP" kind="show" id="eXx-jl-KQZ"/>
                             </connections>
@@ -137,7 +137,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zE7-TM-fUQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="zoP-LR-3F6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1214" y="1177"/>
+            <point key="canvasLocation" x="-1214.018691588785" y="1176.6738660907129"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="H6k-5Q-8Fq">
@@ -474,7 +474,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="zh3-Vk-j5t" kind="relationship" relationship="viewControllers" id="KZW-DS-XmN"/>
                         <segue destination="ivs-YV-H9F" kind="relationship" relationship="viewControllers" id="a4f-8F-BKn"/>
                         <segue destination="Ul1-rM-Pb3" kind="relationship" relationship="viewControllers" id="WZy-Yh-RZo"/>
                     </connections>
@@ -483,11 +482,11 @@
             </objects>
             <point key="canvasLocation" x="376" y="54"/>
         </scene>
-        <!--Friends-->
+        <!--Друзья-->
         <scene sceneID="7F9-od-HNA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ivs-YV-H9F" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Friends" id="ArU-FF-d8j">
+                    <tabBarItem key="tabBarItem" title="Друзья" id="ArU-FF-d8j">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -504,11 +503,11 @@
             </objects>
             <point key="canvasLocation" x="1450.7246376811595" y="-236.38392857142856"/>
         </scene>
-        <!--Groups-->
+        <!--Группы-->
         <scene sceneID="Bjy-8O-clB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ul1-rM-Pb3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Groups" id="gHp-jh-VQZ">
+                    <tabBarItem key="tabBarItem" title="Группы" id="gHp-jh-VQZ">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -525,22 +524,6 @@
             </objects>
             <point key="canvasLocation" x="1450.7246376811595" y="520.98214285714289"/>
         </scene>
-        <!--Profile-->
-        <scene sceneID="nSU-rh-zXB">
-            <objects>
-                <viewController modalPresentationStyle="fullScreen" id="zh3-Vk-j5t" customClass="ScreenAfterLoginViewController" customModule="ChatALittle" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6SF-oZ-uFD">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Ygy-2q-wwq"/>
-                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Profile" selectedImage="child-head" id="3dI-ju-6iX"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6gK-dD-dHk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="815.8878504672897" y="1176.6738660907129"/>
-        </scene>
         <!--Frieds Photo Collection View Controller-->
         <scene sceneID="fHc-aR-ZE9">
             <objects>
@@ -550,23 +533,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="nY9-Ml-fEj">
-                            <size key="itemSize" width="150" height="150"/>
-                            <size key="estimatedItemSize" width="150" height="150"/>
+                            <size key="itemSize" width="300" height="300"/>
+                            <size key="estimatedItemSize" width="300" height="300"/>
                             <size key="headerReferenceSize" width="10" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="29" minY="0.0" maxX="20" maxY="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UserPhotoCollectionViewCellId" id="kLW-y0-VeW">
-                                <rect key="frame" x="29" y="0.0" width="149.99999999999997" height="150"/>
+                                <rect key="frame" x="64" y="0.0" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ObM-zP-HGB">
-                                    <rect key="frame" x="0.0" y="0.0" width="149.99999999999997" height="150"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionViewCellContentView>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qRg-Y3-AAQ">
+                            <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </collectionReusableView>
                         <connections>
@@ -582,7 +566,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="child-head" width="24" height="24"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

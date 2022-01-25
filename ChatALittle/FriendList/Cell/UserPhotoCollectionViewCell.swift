@@ -11,14 +11,13 @@ class UserPhotoCollectionViewCell: UICollectionViewCell {
     static func nib() -> UINib {
         return UINib(nibName: "UserPhotoCollectionViewCell", bundle: nil)
     }
-    
-    
-    @IBOutlet weak var userPhotoImage: UIImageView!
-    
+    //var userPhotoImage: String = "1"
+    @IBOutlet weak var profileView: FriendPorfile!
+
+    //  @IBOutlet weak var userPhotoImage: UIImageView()
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-    
 
 }

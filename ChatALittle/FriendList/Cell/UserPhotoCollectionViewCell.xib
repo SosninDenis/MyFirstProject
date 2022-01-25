@@ -10,32 +10,37 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UserPhotoCollectionViewCellId" id="gTV-IL-0wX" customClass="UserPhotoCollectionViewCell" customModule="ChatALittle" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+            <rect key="frame" x="0.0" y="0.0" width="269" height="274"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                <rect key="frame" x="0.0" y="0.0" width="269" height="274"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DLm-en-iS3">
-                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="150" id="1fw-KI-dGz"/>
-                            <constraint firstAttribute="width" constant="150" id="BSS-GV-ORC"/>
-                        </constraints>
-                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rbB-3U-hCv" customClass="FriendPorfile" customModule="ChatALittle" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="269" height="274"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="opacityPhotoShadow">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="radiusPhotoShadow">
+                                <real key="value" value="90"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="DLm-en-iS3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0nM-ka-7O2"/>
-                <constraint firstAttribute="trailing" secondItem="DLm-en-iS3" secondAttribute="trailing" id="Wtg-c0-ZeL"/>
-                <constraint firstItem="DLm-en-iS3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="h8S-1n-l1Z"/>
-                <constraint firstAttribute="bottom" secondItem="DLm-en-iS3" secondAttribute="bottom" id="pAh-Fa-ren"/>
+                <constraint firstItem="rbB-3U-hCv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="OQI-d3-4lh"/>
+                <constraint firstAttribute="bottom" secondItem="rbB-3U-hCv" secondAttribute="bottom" id="eWi-04-fJA"/>
+                <constraint firstItem="rbB-3U-hCv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="iNH-SX-DRI"/>
+                <constraint firstAttribute="trailing" secondItem="rbB-3U-hCv" secondAttribute="trailing" id="zMm-Tw-b4C"/>
             </constraints>
+            <size key="customSize" width="269" height="274"/>
             <connections>
-                <outlet property="userPhotoImage" destination="DLm-en-iS3" id="9oE-Cc-7pq"/>
+                <outlet property="profileView" destination="rbB-3U-hCv" id="EL3-Ta-7ec"/>
             </connections>
-            <point key="canvasLocation" x="131.8840579710145" y="131.91964285714286"/>
+            <point key="canvasLocation" x="-712.31884057971024" y="-54.241071428571423"/>
         </collectionViewCell>
     </objects>
 </document>
