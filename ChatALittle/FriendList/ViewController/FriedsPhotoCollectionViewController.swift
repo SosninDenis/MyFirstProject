@@ -29,12 +29,13 @@ class FriedsPhotoCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        collectionView.reloadData()
+
         let image = currentUserProfile[indexPath.row].imageName
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserPhotoCollectionViewCellId", for: indexPath) as! UserPhotoCollectionViewCell
         cell.backgroundColor = .clear
         cell.profileView.photo = UIImage(named: image)
         collectionView.reloadData()
+        
         return cell
     }
 }
