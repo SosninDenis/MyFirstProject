@@ -9,7 +9,7 @@ import UIKit
 
 class FriendsListTableViewController: UITableViewController {
     
-    var contactList: [FriendsListCellModel] = [.init(name: "BaraKK", surnName: "Abama", imageName: "barak", userID: 1), .init(name: "Мерлин", surnName: "Мансоне", imageName: "merlin", userID: 2), .init(name: "Светлана", surnName: "Васильева", imageName: "women2", userID: 3), .init(name: "Игорь Петрович", surnName: "Ю", imageName: "oldMan", userID: 4), .init(name: "Гадя Петрович", surnName: "Хренова", imageName: "gadya", userID: 5)]
+    var contactList: [FriendsListCellModel] = [.init(name: "Барак", surnName: "Абама", imageName: "barak", userID: 1), .init(name: "Мерлин", surnName: "Мансоне", imageName: "merlin", userID: 2), .init(name: "Светлана", surnName: "Васильева", imageName: "women2", userID: 3), .init(name: "Игорь Петрович", surnName: "Ю", imageName: "oldMan", userID: 4), .init(name: "Гадя Петрович", surnName: "Хренова", imageName: "gadya", userID: 5)]
     
     override func viewDidLoad() {
         super.viewDidLoad()

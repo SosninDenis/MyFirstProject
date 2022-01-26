@@ -12,11 +12,20 @@ class FriendsTableViewCell: UITableViewCell {
         return UINib(nibName: "FriendsTableViewCell", bundle: nil)
     }
     
-    @IBOutlet weak var friendsNameLabel: UILabel?    
+    @IBOutlet weak var friendsNameLabel: UILabel?
     @IBOutlet weak var imageViewName: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupUI()
+    }
+    
+    func setupUI() {
+        
+        imageViewName.layer.cornerRadius = 29
+        imageViewName.layer.borderWidth = 1
+        imageViewName.layer.borderColor = UIColor.black.cgColor
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
