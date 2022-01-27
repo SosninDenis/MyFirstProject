@@ -65,28 +65,59 @@
                             <constraint firstAttribute="height" constant="30" id="Hkv-sa-31u"/>
                         </constraints>
                         <attributedString key="attributedText">
-                            <fragment content="1">
+                            <fragment content="0">
                                 <attributes>
                                     <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <font key="NSFont" size="20" name="MarkerFelt-Wide"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YbD-Da-9s0" customClass="LikeButton" customModule="ChatALittle" customModuleProvider="target">
+                        <rect key="frame" x="260" y="322" width="40" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="0rC-84-a0k"/>
+                            <constraint firstAttribute="width" constant="40" id="3Fu-HG-Ox7"/>
+                        </constraints>
+                        <connections>
+                            <action selector="tapOnButtonLike:" destination="gTV-IL-0wX" eventType="touchDown" id="j8x-DE-H5d"/>
+                        </connections>
+                    </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="BfN-0i-TPN" firstAttribute="top" secondItem="jZQ-oF-zxY" secondAttribute="bottom" constant="20" id="0eO-AJ-aNW"/>
+                <constraint firstAttribute="trailing" secondItem="YbD-Da-9s0" secondAttribute="trailing" constant="50" id="9PH-c5-YJ6"/>
                 <constraint firstItem="jZQ-oF-zxY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="50" id="Dam-h5-ia9"/>
                 <constraint firstItem="K4J-H2-smk" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Ic0-ZZ-dWO"/>
+                <constraint firstItem="YbD-Da-9s0" firstAttribute="top" secondItem="jZQ-oF-zxY" secondAttribute="bottom" constant="22" id="OkL-66-LVe"/>
                 <constraint firstItem="K4J-H2-smk" firstAttribute="top" secondItem="jZQ-oF-zxY" secondAttribute="bottom" constant="60" id="oos-gI-jHl"/>
                 <constraint firstItem="jZQ-oF-zxY" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="pfe-sR-eXy"/>
                 <constraint firstItem="BfN-0i-TPN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="50" id="wnG-xe-8z7"/>
             </constraints>
             <size key="customSize" width="400" height="550"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="shadowsRadiusValue">
+                    <real key="value" value="31"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacityValue">
+                    <real key="value" value="1"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                    <real key="value" value="25"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                    <real key="value" value="1"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="likeView" destination="YbD-Da-9s0" id="vKJ-ZJ-sh4"/>
                 <outlet property="numberOfLike" destination="BfN-0i-TPN" id="Vtl-ZM-77H"/>
                 <outlet property="photoShadow" destination="jZQ-oF-zxY" id="xla-cD-KaH"/>
                 <outlet property="userNameLabel" destination="K4J-H2-smk" id="xsl-NK-MyL"/>

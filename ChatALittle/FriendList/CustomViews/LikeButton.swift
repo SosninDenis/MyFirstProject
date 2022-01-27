@@ -9,7 +9,7 @@ import UIKit
 
 
 
-class LikeButton: UIView {
+class LikeButton: UIControl {
 
     
     let imageView = UIView (frame: CGRect(x: 0, y: 0, width: 40, height: 35))
@@ -17,8 +17,8 @@ class LikeButton: UIView {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        imageView.backgroundColor = .blue
-        imageView.layer.borderColor = UIColor.green.cgColor
+        imageView.layer.borderWidth = 2
+        imageView.layer.borderColor = UIColor.red.cgColor
         let maskLayer = CAShapeLayer()
         let likePath = UIBezierPath()
         likePath.move(to: CGPoint(x: 5, y: 10))
@@ -37,6 +37,42 @@ class LikeButton: UIView {
         maskLayer.path = likePath.cgPath
         imageView.layer.mask = maskLayer
     }
+    
+      
+      public var checked: Bool = false {
+        didSet {
+            if checked == true {
+                imageView.backgroundColor = .red
+            } else {
+                imageView.backgroundColor = .clear
+            }
+        }
+      }
+      
+      override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+      }
+      
+      required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setup()
+      }
+      
+      private func setup() {
+        addTarget(self, action: #selector(touchUpInside), for: .touchUpInside)
+      }
+    
+      @objc func touchUpInside() {
+        checked = !checked
+        sendActions(for: .valueChanged)
+      }
+    
+    
+    
+    
+    
+    
     
     
 
