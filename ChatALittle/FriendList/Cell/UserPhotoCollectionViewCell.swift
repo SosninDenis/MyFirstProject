@@ -15,21 +15,9 @@ class UserPhotoCollectionViewCell: UICollectionViewCell {
  
     @IBOutlet weak var userNameLabel: UILabel!
    
-    @IBInspectable var opacityPhotoShadow: Float = 0.5 {
-        didSet {
-            setNeedsDisplay()
-        }
-    }
-    @IBInspectable var radiusPhotoShadow: CGFloat = 15 {
-        didSet {
-            setNeedsDisplay()
-        }
-    }
+    @IBOutlet weak var numberOfLike: UILabel!
 
     
-    
-    
-
     static func nib() -> UINib {
         return UINib(nibName: "UserPhotoCollectionViewCell", bundle: nil)
     }
@@ -41,29 +29,35 @@ class UserPhotoCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setupUI()
+        setupUIphoto()
     }
-    
-    
-    
-    func setupUI() {
 
+    func setupUIphoto() {
         userPhotoImage.layer.cornerRadius = 125
         userPhotoImage.layer.borderWidth = 1
         userPhotoImage.layer.borderColor = UIColor.black.cgColor
         userPhotoImage.clipsToBounds = true
         userPhotoImage.backgroundColor = .gray
         photoShadow.layer.shadowOffset = CGSize (width: 10, height: 10)
-        photoShadow.layer.shadowColor = UIColor.black.cgColor
-        photoShadow.layer.shadowRadius = radiusPhotoShadow
-        photoShadow.layer.shadowOpacity = opacityPhotoShadow
+        photoShadow.layer.shadowColor = UIColor.green.cgColor
+        photoShadow.layer.shadowRadius = 30
+        photoShadow.layer.shadowOpacity = 0.5
         photoShadow.backgroundColor = .none
         photoShadow.clipsToBounds = false
-            
         
-        
-        
-        
+        let customView1 = LikeButton(frame: CGRect(x: 300, y: 310 , width: 40, height: 35))
+        customView1.layer.backgroundColor = UIColor.red.cgColor
+        customView1.backgroundColor = .clear
+        self.addSubview(customView1)
     }
 
+    
+    
+    
+    
+    
+    @IBAction func tapLikeButton(_ sender: LikeButton) {
+//        numberOfLike.text = "11"
+//        print (numberOfLike)
+    }
 }
