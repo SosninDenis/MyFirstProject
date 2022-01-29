@@ -7,84 +7,61 @@
 
 import UIKit
 
-
-
-class LikeButton: UIControl {
-
+class LikeButton: UIView {
     
-    let imageView = UIView (frame: CGRect(x: 0, y: 0, width: 40, height: 35))
-    
+    public var checked: Bool = true
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        imageView.layer.borderWidth = 2
-        imageView.layer.borderColor = UIColor.red.cgColor
-        let maskLayer = CAShapeLayer()
-        let likePath = UIBezierPath()
-        likePath.move(to: CGPoint(x: 5, y: 10))
-        likePath.addLine(to: CGPoint(x: 10, y: 5))
-        likePath.addLine(to: CGPoint(x: 15, y: 5))
-        likePath.addLine(to: CGPoint(x: 20, y: 10))
-        likePath.addLine(to: CGPoint(x: 25, y: 5))
-        likePath.addLine(to: CGPoint(x: 30, y: 5))
-        likePath.addLine(to: CGPoint(x: 35, y: 10))
-        likePath.addLine(to: CGPoint(x: 35, y: 15))
-        likePath.addLine(to: CGPoint(x: 20, y: 30))
-        likePath.addLine(to: CGPoint(x: 5, y: 15))
-        likePath.close()
-        likePath.stroke()
-        maskLayer.fillColor = UIColor.red.cgColor
-        maskLayer.path = likePath.cgPath
-        imageView.layer.mask = maskLayer
+        let path = getPath()
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = path.cgPath
+        shapeLayer.strokeColor = UIColor.red.cgColor
+        
+        if checked == true {
+            shapeLayer.fillColor = UIColor.gray.cgColor
+        } else {
+            shapeLayer.fillColor = UIColor.red.cgColor
+        }
+        shapeLayer.lineWidth = 3
+        layer.addSublayer(shapeLayer)
     }
     
-      
-      public var checked: Bool = false {
-        didSet {
-            if checked == true {
-                imageView.backgroundColor = .red
-            } else {
-                imageView.backgroundColor = .clear
-            }
-        }
-      }
-      
-      override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-      }
-      
-      required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setup()
-      }
-      
-      private func setup() {
-        addTarget(self, action: #selector(touchUpInside), for: .touchUpInside)
-      }
-    
-      @objc func touchUpInside() {
-        checked = !checked
-        sendActions(for: .valueChanged)
-      }
-    
-    
-    
-    
-    
-    
-    
-    
+    func getPath() ->UIBezierPath {
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: 5, y: 10))
+        path.addLine(to: CGPoint(x: 10, y: 5))
+        path.addLine(to: CGPoint(x: 15, y: 5))
+        path.addLine(to: CGPoint(x: 20, y: 10))
+        path.addLine(to: CGPoint(x: 25, y: 5))
+        path.addLine(to: CGPoint(x: 30, y: 5))
+        path.addLine(to: CGPoint(x: 35, y: 10))
+        path.addLine(to: CGPoint(x: 35, y: 15))
+        path.addLine(to: CGPoint(x: 20, y: 30))
+        path.addLine(to: CGPoint(x: 5, y: 15))
+        path.close()
+        path.fill()
+        path.stroke()
+        return path
+    }
 
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
 }
 
-    
-    
-    
-    
-    
-    
-    
 
-  
+
+
+
+
+
+
+
+
 

@@ -17,7 +17,6 @@ class FriedsPhotoCollectionViewController: UICollectionViewController {
         registerTableViewCells()
     }
     
-
     // MARK: UICollectionViewDataSource
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -29,7 +28,6 @@ class FriedsPhotoCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
         let image = currentUserProfile[indexPath.row].imageName
         let userName = currentUserProfile[indexPath.row].name + " " + currentUserProfile[indexPath.row].surnName
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserPhotoCollectionViewCellId", for: indexPath) as! UserPhotoCollectionViewCell
@@ -37,9 +35,10 @@ class FriedsPhotoCollectionViewController: UICollectionViewController {
         cell.userPhotoImage.image = UIImage(named: image)
         cell.userNameLabel.text = userName
         collectionView.reloadData()
-        
+        cell.likeView.isUserInteractionEnabled = true
         return cell
     }
+    
 }
 
 private extension FriedsPhotoCollectionViewController {
