@@ -14,9 +14,14 @@ class LoginFormController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var singUpButton: UIButton!
     @IBOutlet weak var forgotPasswordButton: UIButton!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+
+        
+        
     }
     
     @IBAction func didTapButtonLogin(_ sender: Any) {
@@ -51,7 +56,7 @@ class LoginFormController: UIViewController {
         guard let login = loginTF.text,
               let password = passwordTF.text else { return false }
         
-        if login == "" && password == "" {
+        if login == "admin" && password == "1234" {
             return true
         } else {
             return false
@@ -73,7 +78,6 @@ class LoginFormController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
     
     
     

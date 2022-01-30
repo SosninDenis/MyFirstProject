@@ -9,11 +9,24 @@ import UIKit
 
 class FriendsListTableViewController: UITableViewController {
     
+    @IBOutlet var friendListTableView: UITableView!
+    
     var contactList: [FriendsListCellModel] = [.init(name: "Барак", surnName: "Абама", imageName: "barak", userID: 1), .init(name: "Мерлин", surnName: "Мансоне", imageName: "merlin", userID: 2), .init(name: "Светлана", surnName: "Васильева", imageName: "women2", userID: 3), .init(name: "Игорь Петрович", surnName: "Ю", imageName: "oldMan", userID: 4), .init(name: "Гадя Петрович", surnName: "Хренова", imageName: "gadya", userID: 5)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableViewCells()
+        setGradientBackground()
+    }
+    
+    private func setGradientBackground() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.white.cgColor, UIColor.darkGray.cgColor]
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.frame = self.view.bounds
+        let backgroundView = UIView(frame: friendListTableView.bounds)
+        backgroundView.layer.insertSublayer(gradientLayer, at: .zero)
+        friendListTableView.backgroundView = backgroundView
     }
     
     // MARK: - Table view data source
@@ -35,7 +48,7 @@ class FriendsListTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "UserPhoto"{
             guard let friedsPhotoCollectionViewController = segue.destination as? FriedsPhotoCollectionViewController,
-            let sendUserData = sender as? FriendsListCellModel else { return }
+                  let sendUserData = sender as? FriendsListCellModel else { return }
             friedsPhotoCollectionViewController.currentUserProfile.append(sendUserData)
         }
     }
@@ -43,21 +56,12 @@ class FriendsListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let name = contactList[indexPath.row].name + " " + contactList[indexPath.row].surnName
         let image = contactList[indexPath.row].imageName
-        if indexPath.row % 2 == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCellId", for: indexPath) as! FriendsTableViewCell
-            cell.backgroundColor = .darkGray
-            cell.friendsNameLabel?.text = name
-            cell.imageViewName.image = UIImage(named: image)
-            cell.accessoryType = .disclosureIndicator
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCellId", for: indexPath) as! FriendsTableViewCell
-            cell.backgroundColor = .gray
-            cell.friendsNameLabel?.text = name
-            cell.imageViewName.image = UIImage(named: image)
-            cell.accessoryType = .disclosureIndicator
-            return cell
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCellId", for: indexPath) as! FriendsTableViewCell
+        cell.backgroundColor = .clear
+        cell.friendsNameLabel?.text = name
+        cell.imageViewName.image = UIImage(named: image)
+        cell.accessoryType = .disclosureIndicator
+        return cell
     }
 }
 

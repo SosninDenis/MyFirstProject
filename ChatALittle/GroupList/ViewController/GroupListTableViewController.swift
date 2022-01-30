@@ -11,10 +11,25 @@ class GroupListTableViewController: UITableViewController {
     
     var groupList: [GroupListCellModel] = [.init(groupName: "BMW CLub", groupImage: "bmw")]
     
+    @IBOutlet var groupListTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableViewCells()
+        setGradientBackground()
     }
+    
+    
+    private func setGradientBackground() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.white.cgColor, UIColor.darkGray.cgColor]
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.frame = self.view.bounds
+        let backgroundView = UIView(frame: groupListTableView.bounds)
+        backgroundView.layer.insertSublayer(gradientLayer, at: .zero)
+        groupListTableView.backgroundView = backgroundView
+    }
+    
     
     // MARK: - Table view data source
     
@@ -29,31 +44,18 @@ class GroupListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let name = groupList[indexPath.row].groupName
         let image = groupList[indexPath.row].groupImage
-        if indexPath.row % 2 == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCellId", for: indexPath) as! FriendsTableViewCell
-            cell.backgroundColor = .darkGray
-            cell.imageViewName.image = UIImage(named: image)
-            cell.friendsNameLabel?.text = name
-            cell.accessoryType = .disclosureIndicator
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCellId", for: indexPath) as! FriendsTableViewCell
-            cell.backgroundColor = .gray
-            cell.friendsNameLabel?.text = name
-            cell.imageViewName.image = UIImage(named: image)
-            cell.accessoryType = .disclosureIndicator
-            return cell
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCellId", for: indexPath) as! FriendsTableViewCell
+        cell.backgroundColor = .clear
+        cell.imageViewName.image = UIImage(named: image)
+        cell.friendsNameLabel?.text = name
+        cell.accessoryType = .disclosureIndicator
+        return cell
     }
     
     @IBAction func addGroup(segue: UIStoryboardSegue) {
         
-        // Проверяем идентификатор, чтобы убедиться, что это нужный переход
         if segue.identifier == "addGroup" {
-            // Получаем ссылку на контроллер, с которого осуществлен переход
             let globalGroupListController = segue.source as! GlobalGroupListTableViewController
-            
-            // Получаем индекс выделенной ячейки
             if let indexPath = globalGroupListController.tableView.indexPathForSelectedRow {
                 let group = globalGroupListController.globalGroupList[indexPath.row]
                 groupList.append(group)
@@ -71,39 +73,6 @@ class GroupListTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D2A159127A6FF9A0032AB61 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2A159027A6FF9A0032AB61 /* GradientView.swift */; };
 		9D2BDAD927989C8300AAC23A /* FriendsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BDAD827989C8300AAC23A /* FriendsListTableViewController.swift */; };
 		9D2BDADD27989D5B00AAC23A /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BDADB27989D5B00AAC23A /* FriendsTableViewCell.swift */; };
 		9D2BDADE27989D5B00AAC23A /* FriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D2BDADC27989D5B00AAC23A /* FriendsTableViewCell.xib */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D2A159027A6FF9A0032AB61 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		9D2BDAD827989C8300AAC23A /* FriendsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewController.swift; sourceTree = "<group>"; };
 		9D2BDADB27989D5B00AAC23A /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		9D2BDADC27989D5B00AAC23A /* FriendsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsTableViewCell.xib; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		9DD05888279F39BC009D6B14 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				9D2A159027A6FF9A0032AB61 /* GradientView.swift */,
 				9DD05889279F39FF009D6B14 /* LikeButton.swift */,
 			);
 			path = CustomViews;
@@ -244,6 +247,7 @@
 				9D3BE48B278B61CA001885C0 /* ScreenAfterLoginViewController.swift in Sources */,
 				9D2BDAF6279CA49400AAC23A /* UserPhotoCollectionViewCell.swift in Sources */,
 				9DF4991B27935C1600337F62 /* ForgotPasswordViewController.swift in Sources */,
+				9D2A159127A6FF9A0032AB61 /* GradientView.swift in Sources */,
 				9DD0588A279F39FF009D6B14 /* LikeButton.swift in Sources */,
 				9D2BDADD27989D5B00AAC23A /* FriendsTableViewCell.swift in Sources */,
 				9D2BDAE72799F7A700AAC23A /* FriendsListCellModel.swift in Sources */,
