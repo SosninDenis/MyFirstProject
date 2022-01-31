@@ -17,7 +17,6 @@ class UserPhotoCollectionViewCell: UICollectionViewCell {
     private var changeNumberOfLikes:Int = 0
     
     
-    //Задание цвета в interface builder
     @IBInspectable
     var shadowColor: UIColor? {
         get {
