@@ -8,23 +8,28 @@
 import UIKit
 
 class LoginFormController: UIViewController {
-
+    
     @IBOutlet weak var loginTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var singUpButton: UIButton!
     @IBOutlet weak var forgotPasswordButton: UIButton!
+
     
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-    @IBAction func didTapButtonLogin(_ sender: Any) { //кнопка залогиниться
+
+        
+        
     }
-
+    
+    @IBAction func didTapButtonLogin(_ sender: Any) {
+    }
+    
     // переход на страницу регистрации минуя проверку пароля
     @IBAction func didTapButtonSingUp(_ sender: UIButton) {
-            performSegue(withIdentifier: "goToViewSingUp", sender: nil)
+        performSegue(withIdentifier: "goToViewSingUp", sender: nil)
     }
     // переход на страницу восстановления пароля минуя проверку пароля
     @IBAction func didTapButtonForgotPass(_ sender: UIButton) {
@@ -36,43 +41,38 @@ class LoginFormController: UIViewController {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-            // Проверяем данные
-            let checkResult = checkUserData()
-            
-            // Если данные не верны, покажем ошибку
-            if !checkResult {
-                showLoginError()
-            }
-            // Вернем результат
-            return checkResult
-        }
+        // Проверяем данные
+        let checkResult = checkUserData()
         
-        func checkUserData() -> Bool {
-            guard let login = loginTF.text,
-                let password = passwordTF.text else { return false }
-            
-            if login == "admin" && password == "123456" {
-                return true
-            } else {
-                return false
-            }
+        // Если данные не верны, покажем ошибку
+        if !checkResult {
+            showLoginError()
         }
+        // Вернем результат
+        return checkResult
+    }
+    
+    func checkUserData() -> Bool {
+        guard let login = loginTF.text,
+              let password = passwordTF.text else { return false }
         
-        func showLoginError() {
-            // Создаем контроллер
-            let alter = UIAlertController(title: "Ошибка", message: "Введены не верные данные пользователя", preferredStyle: .alert)
-            // Создаем кнопку для UIAlertController
-            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            // Добавляем кнопку на UIAlertController
-            alter.addAction(action)
-            // Показываем UIAlertController
-            present(alter, animated: true, completion: nil)
+        if login == "admin" && password == "1234" {
+            return true
+        } else {
+            return false
         }
-    //Функция передачи данных на второй экран c profile
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        guard let dvc = segue.destination as? ScreenAfterLoginViewController else { return }
-    //        dvc.login = loginTF.text
-    //    }
+    }
+    
+    func showLoginError() {
+        // Создаем контроллер
+        let alter = UIAlertController(title: "Ошибка", message: "Введены не верные данные пользователя", preferredStyle: .alert)
+        // Создаем кнопку для UIAlertController
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        // Добавляем кнопку на UIAlertController
+        alter.addAction(action)
+        // Показываем UIAlertController
+        present(alter, animated: true, completion: nil)
+    }
     
     // Функция для пропадания клавиатуры про окончании ввода
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -85,5 +85,4 @@ class LoginFormController: UIViewController {
     
     
     
-
 }
