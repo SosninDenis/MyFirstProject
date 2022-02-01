@@ -13,6 +13,8 @@ class GroupListTableViewController: UITableViewController {
     
     @IBOutlet var groupListTableView: UITableView!
     
+    @IBOutlet weak var searchGroup: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableViewCells()
@@ -42,25 +44,21 @@ class GroupListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let name = groupList[indexPath.row].groupName
-        let image = groupList[indexPath.row].groupImage
+        
+        let currentUserGroupList = groupList[indexPath.row]
+//        let name = groupList[indexPath.row].groupName
+//        let image = groupList[indexPath.row].groupImage
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCellId", for: indexPath) as! FriendsTableViewCell
         cell.backgroundColor = .clear
-        cell.imageViewName.image = UIImage(named: image)
-        cell.friendsNameLabel?.text = name
+        cell.imageViewName.image = UIImage(named: currentUserGroupList.groupImage)
+        cell.friendsNameLabel?.text = currentUserGroupList.groupName
         cell.accessoryType = .disclosureIndicator
         return cell
     }
     
     @IBAction func addGroup(segue: UIStoryboardSegue) {
-        
         if segue.identifier == "addGroup" {
-            let globalGroupListController = segue.source as! GlobalGroupListTableViewController
-            if let indexPath = globalGroupListController.tableView.indexPathForSelectedRow {
-                let group = globalGroupListController.globalGroupList[indexPath.row]
-                groupList.append(group)
-                tableView.reloadData()
-            }
+            tableView.reloadData()
         }
     }
     
