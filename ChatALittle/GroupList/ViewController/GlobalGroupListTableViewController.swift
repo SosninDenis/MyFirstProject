@@ -13,32 +13,34 @@ class GlobalGroupListTableViewController: UITableViewController {
                                                  .init(groupName: "ФК Зенит", groupImage: "zenit"),
                                                  .init(groupName: "Сбербанк", groupImage: "sber"),
                                                  .init(groupName: "News", groupImage: "news")]
+    @IBOutlet weak var searchBar: UISearchBar!
     private var filteredGroupArray = [GroupListCellModel]()
     @IBOutlet var globalGroupListTableView: UITableView!
-    private let searchController = UISearchController(searchResultsController: nil)
-    private var searchBarIsEmpty: Bool {
-        guard let text = searchController.searchBar.text else {return false}
-        return text.isEmpty
-    }
-    
-    private var isFiltering: Bool {
-        return searchController.isActive && !searchBarIsEmpty
-    }
-    
+//    private let searchController = UISearchController(searchResultsController: nil)
+//    private var searchBarIsEmpty: Bool {
+//        guard let text = searchController.searchBar.text else {return false}
+//        return text.isEmpty
+//    }
+//
+//    private var isFiltering: Bool {
+//        return searchController.isActive && !searchBarIsEmpty
+//    }
+//
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableViewCells()
         setGradientBackground()
-        //setup the search Controller
+        self.searchBar.delegate = self
+        searchBar.placeholder = "Поиск группы"
+        self.tableView.reloadData()
+        self.filteredGroupArray = self.globalGroupList
+    
+
         
         
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search"
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
+
         
     }
     
@@ -60,11 +62,7 @@ class GlobalGroupListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isFiltering {
             return filteredGroupArray.count
-        }
-        
-        return globalGroupList.count
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -73,11 +71,7 @@ class GlobalGroupListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var globalGroup: GroupListCellModel
-        if isFiltering {
-            globalGroup = filteredGroupArray[indexPath.row]
-        } else {
-            globalGroup = globalGroupList[indexPath.row] }
+        let globalGroup = filteredGroupArray[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCellId", for: indexPath) as! FriendsTableViewCell
         cell.backgroundColor = .clear
         cell.imageViewName.image = UIImage(named: globalGroup.groupImage)
@@ -89,12 +83,7 @@ class GlobalGroupListTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addGroup" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let groupSend: GroupListCellModel
-                if isFiltering {
-                    groupSend = filteredGroupArray[indexPath.row]
-                } else {
-                    groupSend = globalGroupList[indexPath.row]
-                }
+                let groupSend = filteredGroupArray[indexPath.row]
                 let newVC = segue.destination as! GroupListTableViewController
                 newVC.groupList.append(groupSend)
             }
@@ -108,16 +97,14 @@ private extension GlobalGroupListTableViewController {
     }
 }
 
-extension GlobalGroupListTableViewController: UISearchResultsUpdating {
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        filterContentForSearchText(searchController.searchBar.text!)
-    }
-    
-    private func filterContentForSearchText(_ searchText: String) {
-        filteredGroupArray = globalGroupList.filter({ (globalGroup: GroupListCellModel) -> Bool in
-            return globalGroup.groupName.lowercased().contains(searchText.lowercased())
-        })
-        tableView.reloadData()
+extension GlobalGroupListTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            self.filteredGroupArray = self.globalGroupList
+            self.tableView.reloadData()
+            return
+        }
+        self.filteredGroupArray = self.globalGroupList.filter { return $0.groupName.contains(searchText) }
+        self.tableView.reloadData()
     }
 }

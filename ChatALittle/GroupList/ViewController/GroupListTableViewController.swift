@@ -9,18 +9,18 @@ import UIKit
 
 class GroupListTableViewController: UITableViewController {
     
-    var groupList: [GroupListCellModel] = [.init(groupName: "BMW CLub", groupImage: "bmw")]
-    
+    var groupList: [GroupListCellModel] = [.init(groupName: "BMW CLub", groupImage: "bmw"),
+                                           .init(groupName: "ФК Зенит", groupImage: "zenit"),
+                                           .init(groupName: "Сбербанк", groupImage: "sber"),
+                                           .init(groupName: "News", groupImage: "news")]
     @IBOutlet var groupListTableView: UITableView!
-    
-    @IBOutlet weak var searchGroup: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableViewCells()
         setGradientBackground()
+        
     }
-    
     
     private func setGradientBackground() {
         let gradientLayer = CAGradientLayer()
@@ -46,8 +46,8 @@ class GroupListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let currentUserGroupList = groupList[indexPath.row]
-//        let name = groupList[indexPath.row].groupName
-//        let image = groupList[indexPath.row].groupImage
+        //        let name = groupList[indexPath.row].groupName
+        //        let image = groupList[indexPath.row].groupImage
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCellId", for: indexPath) as! FriendsTableViewCell
         cell.backgroundColor = .clear
         cell.imageViewName.image = UIImage(named: currentUserGroupList.groupImage)
@@ -79,3 +79,4 @@ private extension GroupListTableViewController {
         tableView.register(FriendsTableViewCell.nib(), forCellReuseIdentifier: "FriendsTableViewCellId")
     }
 }
+
