@@ -14,18 +14,8 @@ class GlobalGroupListTableViewController: UITableViewController {
                                                  .init(groupName: "Сбербанк", groupImage: "sber"),
                                                  .init(groupName: "News", groupImage: "news")]
     @IBOutlet weak var searchBar: UISearchBar!
-    private var filteredGroupArray = [GroupListCellModel]()
     @IBOutlet var globalGroupListTableView: UITableView!
-//    private let searchController = UISearchController(searchResultsController: nil)
-//    private var searchBarIsEmpty: Bool {
-//        guard let text = searchController.searchBar.text else {return false}
-//        return text.isEmpty
-//    }
-//
-//    private var isFiltering: Bool {
-//        return searchController.isActive && !searchBarIsEmpty
-//    }
-//
+    private var filteredGroupArray = [GroupListCellModel]()
     
     
     override func viewDidLoad() {
@@ -36,12 +26,6 @@ class GlobalGroupListTableViewController: UITableViewController {
         searchBar.placeholder = "Поиск группы"
         self.tableView.reloadData()
         self.filteredGroupArray = self.globalGroupList
-    
-
-        
-        
-
-        
     }
     
     private func setGradientBackground() {
@@ -54,7 +38,6 @@ class GlobalGroupListTableViewController: UITableViewController {
         globalGroupListTableView.backgroundView = backgroundView
     }
     
-    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -62,7 +45,7 @@ class GlobalGroupListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return filteredGroupArray.count
+        return filteredGroupArray.count
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -70,7 +53,6 @@ class GlobalGroupListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let globalGroup = filteredGroupArray[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCellId", for: indexPath) as! FriendsTableViewCell
         cell.backgroundColor = .clear

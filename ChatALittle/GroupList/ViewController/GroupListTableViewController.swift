@@ -19,7 +19,6 @@ class GroupListTableViewController: UITableViewController {
         super.viewDidLoad()
         registerTableViewCells()
         setGradientBackground()
-        
     }
     
     private func setGradientBackground() {
@@ -46,8 +45,6 @@ class GroupListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let currentUserGroupList = groupList[indexPath.row]
-        //        let name = groupList[indexPath.row].groupName
-        //        let image = groupList[indexPath.row].groupImage
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCellId", for: indexPath) as! FriendsTableViewCell
         cell.backgroundColor = .clear
         cell.imageViewName.image = UIImage(named: currentUserGroupList.groupImage)
@@ -63,15 +60,11 @@ class GroupListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        // Если была нажата кнопка «Удалить»
         if editingStyle == .delete {
-            // Удаляем группу из массива
             groupList.remove(at: indexPath.row)
-            // И удаляем строку из таблицы
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
 }
 
 private extension GroupListTableViewController {
