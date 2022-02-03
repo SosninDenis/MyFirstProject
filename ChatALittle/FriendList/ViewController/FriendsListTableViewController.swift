@@ -22,6 +22,10 @@ class FriendsListTableViewController: UITableViewController {
     var dic = [Character: [FriendsListCellModel]]()
     var currentWordUserList = [FriendsListCellModel]()
     
+    public var screenWidth: CGFloat {
+        return UIScreen.main.bounds.width
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +47,8 @@ class FriendsListTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
         return finalArray.count
     }
     
@@ -54,14 +58,13 @@ class FriendsListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         guard let segueToPhoto = dic[finalArray[indexPath.section]] else {return}
         let segueToUserPhoto = segueToPhoto[indexPath.row]
         performSegue(withIdentifier: "UserPhoto", sender: segueToUserPhoto)
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "UserPhoto"{
             guard let friedsPhotoCollectionViewController = segue.destination as? FriedsPhotoCollectionViewController,
                   let sendUserData = sender as? FriendsListCellModel else { return }
@@ -74,7 +77,7 @@ class FriendsListTableViewController: UITableViewController {
         
         if  (dic[finalArray[indexPath.section]] != nil) {
             currentWordUserList = dic[finalArray[indexPath.section]]!
-        let name = currentWordUserList[indexPath.row].name + " " + currentWordUserList[indexPath.row].surnName
+            let name = currentWordUserList[indexPath.row].name + " " + currentWordUserList[indexPath.row].surnName
             let image = currentWordUserList[indexPath.row].imageName
             cell.backgroundColor = .clear
             cell.friendsNameLabel?.text = name
@@ -84,31 +87,24 @@ class FriendsListTableViewController: UITableViewController {
         return cell
     }
     
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let customView = UIView()
-//        customView.backgroundColor = .clear
-//        return customView
-//    }
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let customView = CustomTittleView(frame: .init(x: 0, y: 0, width: screenWidth, height: 20))
+        customView.backgroundColor = .clear
+        let CharOfSection = String(finalArray[section])
+        customView.setText(CharOfSection)
+        return customView
+    }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 15
+        return 20
     }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let CharOfSection = String(finalArray[section])
-        return CharOfSection
-    }
-    
-    
 }
-
 
 private extension FriendsListTableViewController {
     func registerTableViewCells() {
         tableView.register(FriendsTableViewCell.nib(), forCellReuseIdentifier: "FriendsTableViewCellId")
     }
 }
-
 
 private extension FriendsListTableViewController {
     
@@ -141,7 +137,6 @@ private extension FriendsListTableViewController {
             }
         }
     }
-    
 }
 
 
