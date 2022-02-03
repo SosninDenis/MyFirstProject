@@ -108,7 +108,6 @@ private extension FriendsListTableViewController {
 
 private extension FriendsListTableViewController {
     
-    
     func createArraysForCell() {
         for index in 0...(contactList.count - 1) {
             let a = Array(contactList[index].surnName)[0]
@@ -120,7 +119,6 @@ private extension FriendsListTableViewController {
     }
     
     func createFinalDic() {
-        //Заполнение искомого массива имеющимися буквами
         for i in finalArray {
             for index in 0...(contactList.count - 1) {
                 let firstWordOfsurname = Array(contactList[index].surnName)[0]
