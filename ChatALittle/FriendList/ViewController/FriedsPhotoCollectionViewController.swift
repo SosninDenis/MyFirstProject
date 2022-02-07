@@ -45,10 +45,8 @@ class FriedsPhotoCollectionViewController: UICollectionViewController {
         let image = currentUserProfile[indexPath.row].imageName
         let userName = currentUserProfile[indexPath.row].name + " " + currentUserProfile[indexPath.row].surnName
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserPhotoCollectionViewCellId", for: indexPath) as! UserPhotoCollectionViewCell
-        cell.backgroundColor = .clear
         cell.userPhotoImage.image = UIImage(named: image)
         cell.userNameLabel.text = userName
-        collectionView.reloadData()
         cell.likeView.isUserInteractionEnabled = true
         return cell
     }

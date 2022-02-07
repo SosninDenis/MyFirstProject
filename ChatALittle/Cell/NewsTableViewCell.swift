@@ -63,17 +63,30 @@ class NewsTableViewCell: UITableViewCell {
         numberOfLike.backgroundColor = .clear
     }
     
+    
+    
+    
+    
     @objc func tapFunction () {
+
         likeView.checked.toggle()
         if likeView.checked {
             changeNumberOfLikes = -1
         } else {
             changeNumberOfLikes = 1
         }
-        guard let numberLikesText  = numberOfLike.text else {return}
-        guard var numberLikes = Int (numberLikesText) else {return}
-        numberLikes = numberLikes + changeNumberOfLikes
-        numberOfLike.text = String(numberLikes)
+        UIView.transition(with: numberOfLike,
+                          duration: 1,
+                          options: .transitionFlipFromTop,
+                          animations: {[weak self] in
+            guard let self = self else {return}
+            guard let numberLikesText  = self.numberOfLike.text else {return}
+            guard var numberLikes = Int (numberLikesText) else {return}
+            numberLikes += self.changeNumberOfLikes
+            self.numberOfLike.text = String(numberLikes)
+        },
+                          completion: nil)
+
         likeView.setNeedsDisplay()
     }
     

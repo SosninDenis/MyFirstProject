@@ -53,6 +53,9 @@ class NewsTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 550
         
     }
+
+    
+    
     
     // MARK: - Table view data source
     
