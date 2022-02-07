@@ -11,12 +11,28 @@ class FriendsListTableViewController: UITableViewController {
     
     @IBOutlet var friendListTableView: UITableView!
     
-    var contactList: [FriendsListCellModel] = [.init(name: "Барак", surnName: "Абама", imageName: "barak", userID: 1), .init(name: "Мерлин", surnName: "Мансоне", imageName: "merlin", userID: 2), .init(name: "Светлана", surnName: "Васильева", imageName: "women2", userID: 3), .init(name: "Игорь Петрович", surnName: "Ю", imageName: "oldMan", userID: 4), .init(name: "Гадя Петрович", surnName: "Хренова", imageName: "gadya", userID: 5)]
+    var contactList: [FriendsListCellModel] = [.init(name: "Игорь Петрович", surnName: "Ю", imageName: "oldMan", userID: 4),
+                                               .init(name: "Барак", surnName: "Абама", imageName: "barak", userID: 1),
+                                               .init(name: "Мерлин", surnName: "Мансоне", imageName: "merlin", userID: 2),
+                                               .init(name: "Светлана", surnName: "Васильева", imageName: "women2", userID: 3),
+                                               .init(name: "Игорь Петрович", surnName: "Ю", imageName: "oldMan", userID: 4),
+                                               .init(name: "Гадя Петрович", surnName: "Хренова", imageName: "gadya", userID: 5),
+                                               .init(name: "Барак", surnName: "Абамчик", imageName: "barak", userID: 6)]
+    var finalArray = [Character]()
+    var dic = [Character: [FriendsListCellModel]]()
+    var currentWordUserList = [FriendsListCellModel]()
+    
+    public var screenWidth: CGFloat {
+        return UIScreen.main.bounds.width
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableViewCells()
         setGradientBackground()
+        createArraysForCell()
+        createFinalDic()
     }
     
     private func setGradientBackground() {
@@ -31,21 +47,24 @@ class FriendsListTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return finalArray.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contactList.count
+        guard let realNumberOfRowsIsSec = dic[finalArray[section]]?.count else {return 0}
+        return realNumberOfRowsIsSec
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let segueToPhoto = contactList[indexPath.row]
-        performSegue(withIdentifier: "UserPhoto", sender: segueToPhoto)
-        
+        guard let segueToPhoto = dic[finalArray[indexPath.section]] else {return}
+        let segueToUserPhoto = segueToPhoto[indexPath.row]
+        performSegue(withIdentifier: "UserPhoto", sender: segueToUserPhoto)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "UserPhoto"{
             guard let friedsPhotoCollectionViewController = segue.destination as? FriedsPhotoCollectionViewController,
                   let sendUserData = sender as? FriendsListCellModel else { return }
@@ -54,14 +73,30 @@ class FriendsListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let name = contactList[indexPath.row].name + " " + contactList[indexPath.row].surnName
-        let image = contactList[indexPath.row].imageName
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCellId", for: indexPath) as! FriendsTableViewCell
-        cell.backgroundColor = .clear
-        cell.friendsNameLabel?.text = name
-        cell.imageViewName.image = UIImage(named: image)
-        cell.accessoryType = .disclosureIndicator
+        
+        if  (dic[finalArray[indexPath.section]] != nil) {
+            currentWordUserList = dic[finalArray[indexPath.section]]!
+            let name = currentWordUserList[indexPath.row].name + " " + currentWordUserList[indexPath.row].surnName
+            let image = currentWordUserList[indexPath.row].imageName
+            cell.backgroundColor = .clear
+            cell.friendsNameLabel?.text = name
+            cell.imageViewName.image = UIImage(named: image)
+            cell.accessoryType = .disclosureIndicator
+        }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let customView = CustomTittleView(frame: .init(x: 0, y: 0, width: screenWidth, height: 20))
+        customView.backgroundColor = .clear
+        let CharOfSection = String(finalArray[section])
+        customView.setText(CharOfSection)
+        return customView
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
     }
 }
 
@@ -70,6 +105,51 @@ private extension FriendsListTableViewController {
         tableView.register(FriendsTableViewCell.nib(), forCellReuseIdentifier: "FriendsTableViewCellId")
     }
 }
+
+private extension FriendsListTableViewController {
+    
+    func createArraysForCell() {
+        for index in 0...(contactList.count - 1) {
+            let a = Array(contactList[index].surnName)[0]
+            if !finalArray.contains(a) {
+                finalArray.append(a)
+                finalArray = finalArray.sorted{ $0 < $1 }
+            }
+        }
+    }
+    
+    func createFinalDic() {
+        for i in finalArray {
+            for index in 0...(contactList.count - 1) {
+                let firstWordOfsurname = Array(contactList[index].surnName)[0]
+                if firstWordOfsurname == i {
+                    var updateValue = dic[i]
+                    if updateValue == nil {
+                        updateValue = [(contactList[index])]
+                        dic.updateValue(updateValue!, forKey: i)
+                    } else if updateValue != nil {
+                        updateValue?.append(contactList[index])
+                        dic.updateValue(updateValue!, forKey: firstWordOfsurname)
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

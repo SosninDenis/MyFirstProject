@@ -9,8 +9,10 @@ import UIKit
 
 class GroupListTableViewController: UITableViewController {
     
-    var groupList: [GroupListCellModel] = [.init(groupName: "BMW CLub", groupImage: "bmw")]
-    
+    var groupList: [GroupListCellModel] = [.init(groupName: "BMW CLub", groupImage: "bmw"),
+                                           .init(groupName: "ФК Зенит", groupImage: "zenit"),
+                                           .init(groupName: "Сбербанк", groupImage: "sber"),
+                                           .init(groupName: "News", groupImage: "news")]
     @IBOutlet var groupListTableView: UITableView!
     
     override func viewDidLoad() {
@@ -18,7 +20,6 @@ class GroupListTableViewController: UITableViewController {
         registerTableViewCells()
         setGradientBackground()
     }
-    
     
     private func setGradientBackground() {
         let gradientLayer = CAGradientLayer()
@@ -42,38 +43,28 @@ class GroupListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let name = groupList[indexPath.row].groupName
-        let image = groupList[indexPath.row].groupImage
+        
+        let currentUserGroupList = groupList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCellId", for: indexPath) as! FriendsTableViewCell
         cell.backgroundColor = .clear
-        cell.imageViewName.image = UIImage(named: image)
-        cell.friendsNameLabel?.text = name
+        cell.imageViewName.image = UIImage(named: currentUserGroupList.groupImage)
+        cell.friendsNameLabel?.text = currentUserGroupList.groupName
         cell.accessoryType = .disclosureIndicator
         return cell
     }
     
     @IBAction func addGroup(segue: UIStoryboardSegue) {
-        
         if segue.identifier == "addGroup" {
-            let globalGroupListController = segue.source as! GlobalGroupListTableViewController
-            if let indexPath = globalGroupListController.tableView.indexPathForSelectedRow {
-                let group = globalGroupListController.globalGroupList[indexPath.row]
-                groupList.append(group)
-                tableView.reloadData()
-            }
+            tableView.reloadData()
         }
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        // Если была нажата кнопка «Удалить»
         if editingStyle == .delete {
-            // Удаляем группу из массива
             groupList.remove(at: indexPath.row)
-            // И удаляем строку из таблицы
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
 }
 
 private extension GroupListTableViewController {
@@ -81,3 +72,4 @@ private extension GroupListTableViewController {
         tableView.register(FriendsTableViewCell.nib(), forCellReuseIdentifier: "FriendsTableViewCellId")
     }
 }
+

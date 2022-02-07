@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "B6105F5F-7474-4DAD-9E9F-929876872FBA"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FD787A6F-15A7-4AAA-84EA-E71B3676B280"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatALittle/ScreenAfterLoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9EDFA0FC-F356-4431-B3CE-E221789273DD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatALittle/FriendList/Cell/UserPhotoCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "73CC9FD3-AB8E-4870-9B81-6A975DE28DFC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatALittle/FriendList/ViewController/FriedsPhotoCollectionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "FriedsPhotoCollectionViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "73CC9FD3-AB8E-4870-9B81-6A975DE28DFC - 97a93e76ed140e62"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ChatALittle.FriedsPhotoCollectionViewController.currentUserProfile.getter : Swift.Array&lt;ChatALittle.FriendsListCellModel&gt;"
+                  moduleName = "ChatALittle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denissosnin/Desktop/MyFirstProject/ChatALittle/FriendList/ViewController/FriedsPhotoCollectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "73CC9FD3-AB8E-4870-9B81-6A975DE28DFC - 6a6c017748822e6e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ChatALittle.FriedsPhotoCollectionViewController.currentUserProfile.setter : Swift.Array&lt;ChatALittle.FriendsListCellModel&gt;"
+                  moduleName = "ChatALittle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denissosnin/Desktop/MyFirstProject/ChatALittle/FriendList/ViewController/FriedsPhotoCollectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "73CC9FD3-AB8E-4870-9B81-6A975DE28DFC - f81bdfc42ebee489"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ChatALittle.FriedsPhotoCollectionViewController.currentUserProfile.modify : Swift.Array&lt;ChatALittle.FriendsListCellModel&gt;"
+                  moduleName = "ChatALittle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denissosnin/Desktop/MyFirstProject/ChatALittle/FriendList/ViewController/FriedsPhotoCollectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "73CC9FD3-AB8E-4870-9B81-6A975DE28DFC - ea4880530902b489"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ChatALittle.FriedsPhotoCollectionViewController.currentUserProfile.modify : Swift.Array&lt;ChatALittle.FriendsListCellModel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "ChatALittle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denissosnin/Desktop/MyFirstProject/ChatALittle/FriendList/ViewController/FriedsPhotoCollectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "73CC9FD3-AB8E-4870-9B81-6A975DE28DFC - a563e2bb2447c2b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ChatALittle.FriedsPhotoCollectionViewController.init(collectionViewLayout: __C.UICollectionViewLayout) -&gt; ChatALittle.FriedsPhotoCollectionViewController"
+                  moduleName = "ChatALittle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denissosnin/Desktop/MyFirstProject/ChatALittle/FriendList/ViewController/FriedsPhotoCollectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "73CC9FD3-AB8E-4870-9B81-6A975DE28DFC - 5f708200df6db83b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ChatALittle.FriedsPhotoCollectionViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; ChatALittle.FriedsPhotoCollectionViewController"
+                  moduleName = "ChatALittle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denissosnin/Desktop/MyFirstProject/ChatALittle/FriendList/ViewController/FriedsPhotoCollectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "73CC9FD3-AB8E-4870-9B81-6A975DE28DFC - 770512fc37e38a7d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ChatALittle.FriedsPhotoCollectionViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ChatALittle.FriedsPhotoCollectionViewController&gt;"
+                  moduleName = "ChatALittle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denissosnin/Desktop/MyFirstProject/ChatALittle/FriendList/ViewController/FriedsPhotoCollectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "58D786C2-936C-4272-BA37-C6AEDAD7F8AB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatALittle/FriendList/ViewController/FriedsPhotoCollectionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "10CC0EA2-0939-486A-9BEC-7D58BFE4E8B1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatALittle/FriendList/Cell/UserPhotoCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "awakeFromNib()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2A1AA0EC-3054-4BEC-9AF3-A70974C61F04"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatALittle/FriendList/ViewController/FriedsPhotoCollectionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "90C3F6B2-3C0F-468F-AE55-69F95400CE7B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatALittle/FriendList/CustomViews/LikeButton.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "init?(coder:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "90C3F6B2-3C0F-468F-AE55-69F95400CE7B - cae683bf82e47355"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ChatALittle.LikeButton.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ChatALittle.LikeButton&gt;"
+                  moduleName = "ChatALittle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denissosnin/Desktop/MyFirstProject/ChatALittle/FriendList/CustomViews/LikeButton.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "90C3F6B2-3C0F-468F-AE55-69F95400CE7B - 731b5109d5d25f61"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ChatALittle.LikeButton.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ChatALittle.LikeButton&gt;"
+                  moduleName = "ChatALittle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denissosnin/Desktop/MyFirstProject/ChatALittle/FriendList/CustomViews/LikeButton.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "95D3DB3F-AFF8-4CF6-BD9A-CAD7299239A0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatALittle/FriendList/CustomViews/LikeButton.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "LikeButton"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "95D3DB3F-AFF8-4CF6-BD9A-CAD7299239A0 - f9bbe3f564559f0c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ChatALittle.LikeButton.checked.getter : Swift.Bool"
+                  moduleName = "ChatALittle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denissosnin/Desktop/MyFirstProject/ChatALittle/FriendList/CustomViews/LikeButton.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "95D3DB3F-AFF8-4CF6-BD9A-CAD7299239A0 - edc4b71ebcb8a7f8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ChatALittle.LikeButton.checked.setter : Swift.Bool"
+                  moduleName = "ChatALittle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denissosnin/Desktop/MyFirstProject/ChatALittle/FriendList/CustomViews/LikeButton.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "95D3DB3F-AFF8-4CF6-BD9A-CAD7299239A0 - 4c21174d9da1bf3d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ChatALittle.LikeButton.checked.modify : Swift.Bool"
+                  moduleName = "ChatALittle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denissosnin/Desktop/MyFirstProject/ChatALittle/FriendList/CustomViews/LikeButton.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "95D3DB3F-AFF8-4CF6-BD9A-CAD7299239A0 - 5c4a12e61fac91f8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ChatALittle.LikeButton.checked.modify : Swift.Bool with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "ChatALittle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denissosnin/Desktop/MyFirstProject/ChatALittle/FriendList/CustomViews/LikeButton.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "95D3DB3F-AFF8-4CF6-BD9A-CAD7299239A0 - 413ed6a5f21d78fd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ChatALittle.LikeButton.init(frame: __C.CGRect) -&gt; ChatALittle.LikeButton"
+                  moduleName = "ChatALittle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denissosnin/Desktop/MyFirstProject/ChatALittle/FriendList/CustomViews/LikeButton.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "95D3DB3F-AFF8-4CF6-BD9A-CAD7299239A0 - 731b5109d5d25f61"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ChatALittle.LikeButton.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ChatALittle.LikeButton&gt;"
+                  moduleName = "ChatALittle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denissosnin/Desktop/MyFirstProject/ChatALittle/FriendList/CustomViews/LikeButton.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

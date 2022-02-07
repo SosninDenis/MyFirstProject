@@ -9,14 +9,23 @@ import UIKit
 
 class GlobalGroupListTableViewController: UITableViewController {
     
-    var globalGroupList: [GroupListCellModel] = [.init(groupName: "BMW CLub", groupImage: "bmw"), .init(groupName: "ФК Зенит", groupImage: "zenit"), .init(groupName: "Сбербанк", groupImage: "sber"), .init(groupName: "News", groupImage: "news")]
-    
+    var globalGroupList: [GroupListCellModel] = [.init(groupName: "BMW CLub", groupImage: "bmw"),
+                                                 .init(groupName: "ФК Зенит", groupImage: "zenit"),
+                                                 .init(groupName: "Сбербанк", groupImage: "sber"),
+                                                 .init(groupName: "News", groupImage: "news")]
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var globalGroupListTableView: UITableView!
+    private var filteredGroupArray = [GroupListCellModel]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableViewCells()
         setGradientBackground()
+        self.searchBar.delegate = self
+        searchBar.placeholder = "Поиск группы"
+        self.tableView.reloadData()
+        self.filteredGroupArray = self.globalGroupList
     }
     
     private func setGradientBackground() {
@@ -29,7 +38,6 @@ class GlobalGroupListTableViewController: UITableViewController {
         globalGroupListTableView.backgroundView = backgroundView
     }
     
-    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -37,7 +45,7 @@ class GlobalGroupListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return globalGroupList.count
+        return filteredGroupArray.count
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -45,16 +53,24 @@ class GlobalGroupListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let name = globalGroupList[indexPath.row].groupName
-        let image = globalGroupList[indexPath.row].groupImage
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCellId", for: indexPath) as! FriendsTableViewCell
-            cell.backgroundColor = .clear
-            cell.imageViewName.image = UIImage(named: image)
-            cell.friendsNameLabel?.text = name
-            cell.accessoryType = .disclosureIndicator
-            return cell
+        let globalGroup = filteredGroupArray[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCellId", for: indexPath) as! FriendsTableViewCell
+        cell.backgroundColor = .clear
+        cell.imageViewName.image = UIImage(named: globalGroup.groupImage)
+        cell.friendsNameLabel?.text = globalGroup.groupName
+        cell.accessoryType = .disclosureIndicator
+        return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addGroup" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let groupSend = filteredGroupArray[indexPath.row]
+                let newVC = segue.destination as! GroupListTableViewController
+                newVC.groupList.append(groupSend)
+            }
+        }
+    }
 }
 
 private extension GlobalGroupListTableViewController {
@@ -63,3 +79,14 @@ private extension GlobalGroupListTableViewController {
     }
 }
 
+extension GlobalGroupListTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            self.filteredGroupArray = self.globalGroupList
+            self.tableView.reloadData()
+            return
+        }
+        self.filteredGroupArray = self.globalGroupList.filter { return $0.groupName.contains(searchText) }
+        self.tableView.reloadData()
+    }
+}
