@@ -64,9 +64,12 @@ class UserPhotoCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUIphoto()
+        setupUILikes()
         likeView.isUserInteractionEnabled = true
         
     }
+    
+    
     
     func setupUIphoto() {
         userPhotoImage.layer.cornerRadius = 125
@@ -81,12 +84,17 @@ class UserPhotoCollectionViewCell: UICollectionViewCell {
         photoShadow.layer.shadowOpacity = shadowOpacity
         photoShadow.backgroundColor = .none
         photoShadow.clipsToBounds = false
+
+    }
+    
+    func setupUILikes() {
         likeView.isUserInteractionEnabled = true
         likeView.backgroundColor = .clear
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(tapFunction))
         likeView.addGestureRecognizer(recognizer)
+        numberOfLike.backgroundColor = .clear
     }
-    
+
     @objc func tapFunction () {
         likeView.checked.toggle()
         if likeView.checked {
@@ -94,12 +102,20 @@ class UserPhotoCollectionViewCell: UICollectionViewCell {
         } else {
             changeNumberOfLikes = 1
         }
-        guard let numberLikesText  = numberOfLike.text else {return}
-        guard var numberLikes = Int (numberLikesText) else {return}
-        numberLikes = numberLikes + changeNumberOfLikes
-        numberOfLike.text = String(numberLikes)
+        UIView.transition(with: numberOfLike,
+                          duration: 1,
+                          options: .transitionFlipFromTop,
+                          animations: { [weak self] in
+            guard let self = self else {return}
+            guard let numberLikesText  = self.numberOfLike.text else {return}
+            guard var numberLikes = Int (numberLikesText) else {return}
+            numberLikes = numberLikes + self.changeNumberOfLikes
+            self.numberOfLike.text = String(numberLikes)
+        },
+                          completion: nil)
         likeView.setNeedsDisplay()
-        
+
     }
-    
+                            
 }
+

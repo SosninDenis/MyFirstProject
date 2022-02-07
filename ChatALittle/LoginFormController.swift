@@ -15,13 +15,11 @@ class LoginFormController: UIViewController {
     @IBOutlet weak var singUpButton: UIButton!
     @IBOutlet weak var forgotPasswordButton: UIButton!
 
-    
+    @IBOutlet var mainView: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
-        
-        
     }
     
     @IBAction func didTapButtonLogin(_ sender: Any) {
@@ -30,6 +28,7 @@ class LoginFormController: UIViewController {
     // переход на страницу регистрации минуя проверку пароля
     @IBAction func didTapButtonSingUp(_ sender: UIButton) {
         performSegue(withIdentifier: "goToViewSingUp", sender: nil)
+        
     }
     // переход на страницу восстановления пароля минуя проверку пароля
     @IBAction func didTapButtonForgotPass(_ sender: UIButton) {
@@ -41,15 +40,11 @@ class LoginFormController: UIViewController {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        // Проверяем данные
-        let checkResult = checkUserData()
-        
-        // Если данные не верны, покажем ошибку
-        if !checkResult {
-            showLoginError()
-        }
-        // Вернем результат
-        return checkResult
+            let checkResult = checkUserData()
+            if !checkResult {
+                showLoginError()
+            }
+            return checkResult
     }
     
     func checkUserData() -> Bool {
@@ -64,25 +59,15 @@ class LoginFormController: UIViewController {
     }
     
     func showLoginError() {
-        // Создаем контроллер
         let alter = UIAlertController(title: "Ошибка", message: "Введены не верные данные пользователя", preferredStyle: .alert)
-        // Создаем кнопку для UIAlertController
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        // Добавляем кнопку на UIAlertController
         alter.addAction(action)
-        // Показываем UIAlertController
         present(alter, animated: true, completion: nil)
     }
-    
-    // Функция для пропадания клавиатуры про окончании ввода
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-    
-    
-    
-    
-    
+
     
 }
