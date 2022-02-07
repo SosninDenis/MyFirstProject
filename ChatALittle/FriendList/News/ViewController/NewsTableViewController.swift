@@ -44,7 +44,6 @@ class NewsTableViewController: UITableViewController {
         return UIScreen.main.bounds.width
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setGradientBackground()
@@ -54,9 +53,6 @@ class NewsTableViewController: UITableViewController {
         
     }
 
-    
-    
-    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
