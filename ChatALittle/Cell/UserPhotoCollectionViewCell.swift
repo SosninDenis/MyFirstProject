@@ -84,7 +84,7 @@ class UserPhotoCollectionViewCell: UICollectionViewCell {
         photoShadow.layer.shadowOpacity = shadowOpacity
         photoShadow.backgroundColor = .none
         photoShadow.clipsToBounds = false
-
+        
     }
     
     func setupUILikes() {
@@ -94,7 +94,7 @@ class UserPhotoCollectionViewCell: UICollectionViewCell {
         likeView.addGestureRecognizer(recognizer)
         numberOfLike.backgroundColor = .clear
     }
-
+    
     @objc func tapFunction () {
         likeView.checked.toggle()
         if likeView.checked {
@@ -114,8 +114,8 @@ class UserPhotoCollectionViewCell: UICollectionViewCell {
         },
                           completion: nil)
         likeView.setNeedsDisplay()
-
+        
     }
-                            
+    
 }
 

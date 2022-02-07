@@ -68,7 +68,7 @@ class NewsTableViewCell: UITableViewCell {
     
     
     @objc func tapFunction () {
-
+        
         likeView.checked.toggle()
         if likeView.checked {
             changeNumberOfLikes = -1
@@ -86,7 +86,7 @@ class NewsTableViewCell: UITableViewCell {
             self.numberOfLike.text = String(numberLikes)
         },
                           completion: nil)
-
+        
         likeView.setNeedsDisplay()
     }
     
@@ -104,6 +104,6 @@ class NewsTableViewCell: UITableViewCell {
     func setupNumbersOfViews(number:String) {
         numbersOfViews.text = number
     }
-
+    
 }
 

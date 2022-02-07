@@ -19,18 +19,14 @@ class AnimatedLoadViewController: UIViewController {
     var mailScreenHeight: CGFloat {
         return UIScreen.main.bounds.height
     }
-
-    let loadViewSize: CGFloat = 10
     
+    let loadViewSize: CGFloat = 10
     
     @IBOutlet var mainView: UIView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupLoadViews()
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -96,7 +92,7 @@ class AnimatedLoadViewController: UIViewController {
                                 },
                                                completion: {finalDone in
                                     if finalDone {
-                                        self.performSegue(withIdentifier: "loadFromAnimatedViewLaunchScreen", sender: nil)
+                                        self.goToMainScreen()
                                         
                                     }
                                 })
@@ -106,6 +102,10 @@ class AnimatedLoadViewController: UIViewController {
                 })
             }
         })
+    }
+    
+    func goToMainScreen() {
+        performSegue(withIdentifier: "loadFromAnimatedViewLaunchScreen", sender: nil)
     }
     
     
