@@ -42,7 +42,7 @@ class FriedsPhotoCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let image = currentUserProfile[indexPath.row].imageName
+        let image = currentUserProfile[indexPath.row].imageName[0]
         let userName = currentUserProfile[indexPath.row].name + " " + currentUserProfile[indexPath.row].surnName
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserPhotoCollectionViewCellId", for: indexPath) as! UserPhotoCollectionViewCell
         cell.userPhotoImage.image = UIImage(named: image)

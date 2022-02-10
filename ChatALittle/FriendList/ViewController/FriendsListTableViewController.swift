@@ -11,13 +11,12 @@ class FriendsListTableViewController: UITableViewController {
     
     @IBOutlet var friendListTableView: UITableView!
     
-    var contactList: [FriendsListCellModel] = [.init(name: "Игорь Петрович", surnName: "Ю", imageName: "oldMan", userID: 4),
-                                               .init(name: "Барак", surnName: "Абама", imageName: "barak", userID: 1),
-                                               .init(name: "Мерлин", surnName: "Мансоне", imageName: "merlin", userID: 2),
-                                               .init(name: "Светлана", surnName: "Васильева", imageName: "women2", userID: 3),
-                                               .init(name: "Игорь Петрович", surnName: "Ю", imageName: "oldMan", userID: 4),
-                                               .init(name: "Гадя Петрович", surnName: "Хренова", imageName: "gadya", userID: 5),
-                                               .init(name: "Барак", surnName: "Абамчик", imageName: "barak", userID: 6)]
+    var contactList: [FriendsListCellModel] = [.init(name: "Джейсон", surnName: "Стетхем", imageName: ["stet1", "stet2", "stet3"], userID: 4),
+                                               .init(name: "Барак", surnName: "Абама", imageName: ["barak", "barak1", "barak2", "barak3"], userID: 1),
+                                               .init(name: "Мерлин", surnName: "Мансоне", imageName: ["merlin"], userID: 2),
+                                               .init(name: "Джесика", surnName: "Альба", imageName: ["alba1", "alba2", "alba3"], userID: 3),
+                                               .init(name: "Железный", surnName: "Арни", imageName: ["arni1", "arni2", "arni3", "arni4"], userID: 4),
+                                               .init(name: "Гадя Петрович", surnName: "Хренова", imageName: ["gadya", "gadya1", "gadya2", "gadya3" ], userID: 5)]
     var finalArray = [Character]()
     var dic = [Character: [FriendsListCellModel]]()
     var currentWordUserList = [FriendsListCellModel]()
@@ -78,7 +77,7 @@ class FriendsListTableViewController: UITableViewController {
         if  (dic[finalArray[indexPath.section]] != nil) {
             currentWordUserList = dic[finalArray[indexPath.section]]!
             let name = currentWordUserList[indexPath.row].name + " " + currentWordUserList[indexPath.row].surnName
-            let image = currentWordUserList[indexPath.row].imageName
+            let image = currentWordUserList[indexPath.row].imageName[0]
             cell.backgroundColor = .clear
             cell.friendsNameLabel?.text = name
             cell.imageViewName.image = UIImage(named: image)
