@@ -15,6 +15,10 @@ class UserPhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet var numberOfLike: UILabel!
     @IBOutlet weak var likeView: LikeButton!
     private var changeNumberOfLikes:Int = 0
+    @IBOutlet weak var buttonGoToGallery: UIButton!
+    var delegate: MyCellDelegate?
+    
+    
     
     
     @IBInspectable
@@ -65,7 +69,8 @@ class UserPhotoCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         setupUIphoto()
         setupUILikes()
-        likeView.isUserInteractionEnabled = true
+        //setupTapLinkPhoto()
+        
         
     }
     
@@ -88,12 +93,31 @@ class UserPhotoCollectionViewCell: UICollectionViewCell {
     }
     
     func setupUILikes() {
-        likeView.isUserInteractionEnabled = true
+        
         likeView.backgroundColor = .clear
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(tapFunction))
         likeView.addGestureRecognizer(recognizer)
         numberOfLike.backgroundColor = .clear
+        likeView.isUserInteractionEnabled = true
+        
     }
+    
+    
+    
+//    func setupTapLinkPhoto() {
+//        userPhotoImage.isUserInteractionEnabled = true
+//        let recognizerPhoto = UITapGestureRecognizer(target: self, action: #selector(tapPhoto))
+//        userPhotoImage.addGestureRecognizer(recognizerPhoto)
+//    }
+//
+    
+    
+//    @objc func tapPhoto () {
+//
+//        print("TAP PHOTO 🦤🦤🦤🦤🦤🦤🦤🦤🦤🦤🦤🦤🦤🦤🦤🦤")
+//
+//    }
+//
     
     @objc func tapFunction () {
         likeView.checked.toggle()
@@ -114,8 +138,18 @@ class UserPhotoCollectionViewCell: UICollectionViewCell {
         },
                           completion: nil)
         likeView.setNeedsDisplay()
+        print("TAP PHOTO !!!!!!!!!!!!!!!🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬")
         
     }
     
+    @IBAction func tapButtonToPhoto(_ sender: UIButton) {
+        delegate?.tapButtonToPhoto()
+    }
+
 }
+
+protocol MyCellDelegate {
+    func tapButtonToPhoto()
+}
+
 

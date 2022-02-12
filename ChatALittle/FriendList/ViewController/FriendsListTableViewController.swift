@@ -11,17 +11,17 @@ class FriendsListTableViewController: UITableViewController {
     
     @IBOutlet var friendListTableView: UITableView!
     
-    var contactList: [FriendsListCellModel] = [.init(name: "Джейсон", surnName: "Стетхем", imageName: ["stet1", "stet2", "stet3"], userID: 4),
-                                               .init(name: "Барак", surnName: "Абама", imageName: ["barak", "barak1", "barak2", "barak3"], userID: 1),
-                                               .init(name: "Мерлин", surnName: "Мансоне", imageName: ["merlin"], userID: 2),
-                                               .init(name: "Джесика", surnName: "Альба", imageName: ["alba1", "alba2", "alba3"], userID: 3),
-                                               .init(name: "Железный", surnName: "Арни", imageName: ["arni1", "arni2", "arni3", "arni4"], userID: 4),
-                                               .init(name: "Гадя Петрович", surnName: "Хренова", imageName: ["gadya", "gadya1", "gadya2", "gadya3" ], userID: 5)]
+    var contactList: [FriendsListCellModel] = [.init(name: "Джейсон", surnName: "Стетхем", imageName: [UIImage(named: "stet1")!, UIImage(named: "stet2")!, UIImage(named: "stet3")!], userID: 4),
+                                               .init(name: "Барак", surnName: "Абама", imageName: [UIImage(named: "barak")!, UIImage(named: "barak1")!, UIImage(named: "barak2")!, UIImage(named: "barak3")!,], userID: 1),
+                                               .init(name: "Мерлин", surnName: "Мансоне", imageName: [UIImage(named: "merlin")!], userID: 2),
+                                               .init(name: "Джесика", surnName: "Альба", imageName: [UIImage(named: "alba1")!, UIImage(named: "alba2")!, UIImage(named: "alba3")!], userID: 3),
+                                               .init(name: "Железный", surnName: "Арни", imageName: [UIImage(named: "arni1")!, UIImage(named: "arni2")!, UIImage(named: "arni3")!, UIImage(named: "arni4")!,], userID: 6),
+                                               .init(name: "Гадя Петрович", surnName: "Хренова", imageName: [UIImage(named: "gadya")!, UIImage(named: "gadya1")!, UIImage(named: "gadya2")!, UIImage(named: "gadya3")! ], userID: 5)]
     var finalArray = [Character]()
     var dic = [Character: [FriendsListCellModel]]()
     var currentWordUserList = [FriendsListCellModel]()
     
-    public var screenWidth: CGFloat {
+    private var screenWidth: CGFloat {
         return UIScreen.main.bounds.width
     }
     
@@ -63,7 +63,6 @@ class FriendsListTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "UserPhoto"{
             guard let friedsPhotoCollectionViewController = segue.destination as? FriedsPhotoCollectionViewController,
                   let sendUserData = sender as? FriendsListCellModel else { return }
@@ -80,7 +79,7 @@ class FriendsListTableViewController: UITableViewController {
             let image = currentWordUserList[indexPath.row].imageName[0]
             cell.backgroundColor = .clear
             cell.friendsNameLabel?.text = name
-            cell.imageViewName.image = UIImage(named: image)
+            cell.imageViewName.image =  image
             cell.accessoryType = .disclosureIndicator
         }
         return cell

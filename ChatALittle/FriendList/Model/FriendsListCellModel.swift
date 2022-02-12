@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 struct FriendsListCellModel {
     let name: String
     let surnName: String
-    let imageName: [String]
+    let imageName: [UIImage]
     let userID: Int
 }

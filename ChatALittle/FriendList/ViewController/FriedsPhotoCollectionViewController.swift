@@ -9,16 +9,21 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class FriedsPhotoCollectionViewController: UICollectionViewController {
+@IBDesignable class FriedsPhotoCollectionViewController: UICollectionViewController, MyCellDelegate {
+    
+
     
     @IBOutlet var friendPhotoCillectionView: UICollectionView!
     
     var currentUserProfile: [FriendsListCellModel] = []
-    override func viewDidLoad() {
+   
+override func viewDidLoad() {
         super.viewDidLoad()
         registerTableViewCells()
         setGradientBackground()
+    print(currentUserProfile, "🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟")
     }
+    
     
     private func setGradientBackground() {
         let gradientLayer = CAGradientLayer()
@@ -45,11 +50,41 @@ class FriedsPhotoCollectionViewController: UICollectionViewController {
         let image = currentUserProfile[indexPath.row].imageName[0]
         let userName = currentUserProfile[indexPath.row].name + " " + currentUserProfile[indexPath.row].surnName
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserPhotoCollectionViewCellId", for: indexPath) as! UserPhotoCollectionViewCell
-        cell.userPhotoImage.image = UIImage(named: image)
+        cell.userPhotoImage.image = image
         cell.userNameLabel.text = userName
         cell.likeView.isUserInteractionEnabled = true
+        cell.delegate = self
         return cell
     }
+    
+    func tapButtonToPhoto() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let secondViewController = storyboard.instantiateViewController(identifier: "PhotoGalleryViewViewController") as? PhotoGalleryViewViewController else { return }
+        secondViewController.currentUserProfile.append(currentUserProfile[0])
+        
+        show(secondViewController, sender: nil)
+ 
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "goToGalleryPhoto"{
+        guard let photoGalleryViewViewController = segue.destination as? PhotoGalleryViewViewController,
+              let sendUserData = sender as? FriendsListCellModel else { return }
+        photoGalleryViewViewController.currentUserProfile.append(sendUserData)
+    }
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }
 
