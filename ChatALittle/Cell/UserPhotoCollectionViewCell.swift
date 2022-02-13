@@ -17,9 +17,7 @@ class UserPhotoCollectionViewCell: UICollectionViewCell {
     private var changeNumberOfLikes:Int = 0
     @IBOutlet weak var buttonGoToGallery: UIButton!
     var delegate: MyCellDelegate?
-    
-    
-    
+
     
     @IBInspectable
     var shadowColor: UIColor? {
@@ -69,13 +67,8 @@ class UserPhotoCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         setupUIphoto()
         setupUILikes()
-        //setupTapLinkPhoto()
-        
-        
     }
-    
-    
-    
+
     func setupUIphoto() {
         userPhotoImage.layer.cornerRadius = 125
         userPhotoImage.layer.borderWidth = 1
@@ -102,23 +95,7 @@ class UserPhotoCollectionViewCell: UICollectionViewCell {
         
     }
     
-    
-    
-//    func setupTapLinkPhoto() {
-//        userPhotoImage.isUserInteractionEnabled = true
-//        let recognizerPhoto = UITapGestureRecognizer(target: self, action: #selector(tapPhoto))
-//        userPhotoImage.addGestureRecognizer(recognizerPhoto)
-//    }
-//
-    
-    
-//    @objc func tapPhoto () {
-//
-//        print("TAP PHOTO 🦤🦤🦤🦤🦤🦤🦤🦤🦤🦤🦤🦤🦤🦤🦤🦤")
-//
-//    }
-//
-    
+
     @objc func tapFunction () {
         likeView.checked.toggle()
         if likeView.checked {
@@ -138,7 +115,6 @@ class UserPhotoCollectionViewCell: UICollectionViewCell {
         },
                           completion: nil)
         likeView.setNeedsDisplay()
-        print("TAP PHOTO !!!!!!!!!!!!!!!🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬🐬")
         
     }
     

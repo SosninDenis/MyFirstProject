@@ -696,7 +696,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" id="2l5-nW-GxG" customClass="GalleryView" customModule="ChatALittle" customModuleProvider="target">
-                                <rect key="frame" x="20" y="242" width="388" height="388"/>
+                                <rect key="frame" x="0.0" y="202" width="428" height="428"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="safeArea" id="jfb-hh-gTk"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>

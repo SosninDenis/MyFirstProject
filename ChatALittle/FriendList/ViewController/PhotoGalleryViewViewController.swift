@@ -19,7 +19,6 @@ class PhotoGalleryViewViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(currentUserProfile,"🦞🦞🦞🦞🦞🦞🦞🦞🦞")
         setupUI()
 
     }
@@ -27,7 +26,6 @@ class PhotoGalleryViewViewController: UIViewController {
     func setupUI () {
         let images = currentUserProfile[0].imageName
         galleryView.setImages(images: images)
-        print(images,"🦈🦈🦈🦈🦈🦈🦈🦈🦈🦈🦈🦈")
     }
 
 

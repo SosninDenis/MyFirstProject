@@ -21,7 +21,6 @@ override func viewDidLoad() {
         super.viewDidLoad()
         registerTableViewCells()
         setGradientBackground()
-    print(currentUserProfile, "🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟")
     }
     
     
@@ -74,17 +73,7 @@ override func viewDidLoad() {
         photoGalleryViewViewController.currentUserProfile.append(sendUserData)
     }
 }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
 }
 
