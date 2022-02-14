@@ -19,6 +19,10 @@
 		9D2BDAF6279CA49400AAC23A /* UserPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BDAF4279CA49400AAC23A /* UserPhotoCollectionViewCell.swift */; };
 		9D2BDAF7279CA49400AAC23A /* UserPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D2BDAF5279CA49400AAC23A /* UserPhotoCollectionViewCell.xib */; };
 		9D3BE48B278B61CA001885C0 /* ScreenAfterLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3BE48A278B61CA001885C0 /* ScreenAfterLoginViewController.swift */; };
+		9D4CE82A27B8196100DF6A4B /* PhotoGalleryViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4CE82927B8196100DF6A4B /* PhotoGalleryViewViewController.swift */; };
+		9DB9F4B327B85C83005E878F /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9F4B227B85C83005E878F /* GalleryView.swift */; };
+		9DB9F4B527B85C9C005E878F /* GalleryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DB9F4B427B85C9C005E878F /* GalleryView.xib */; };
+		9DB9F4B727B917B2005E878F /* cloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9F4B627B917B2005E878F /* cloudView.swift */; };
 		9DD0588A279F39FF009D6B14 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD05889279F39FF009D6B14 /* LikeButton.swift */; };
 		9DD986EF27877AC600C64C93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD986EE27877AC600C64C93 /* AppDelegate.swift */; };
 		9DD986F127877AC600C64C93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD986F027877AC600C64C93 /* SceneDelegate.swift */; };
@@ -49,6 +53,10 @@
 		9D2BDAF4279CA49400AAC23A /* UserPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		9D2BDAF5279CA49400AAC23A /* UserPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		9D3BE48A278B61CA001885C0 /* ScreenAfterLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenAfterLoginViewController.swift; sourceTree = "<group>"; };
+		9D4CE82927B8196100DF6A4B /* PhotoGalleryViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryViewViewController.swift; sourceTree = "<group>"; };
+		9DB9F4B227B85C83005E878F /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		9DB9F4B427B85C9C005E878F /* GalleryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryView.xib; sourceTree = "<group>"; };
+		9DB9F4B627B917B2005E878F /* cloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cloudView.swift; sourceTree = "<group>"; };
 		9DD05889279F39FF009D6B14 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		9DD986EB27877AC600C64C93 /* ChatALittle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatALittle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD986EE27877AC600C64C93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +134,8 @@
 				9D2BDAF5279CA49400AAC23A /* UserPhotoCollectionViewCell.xib */,
 				9DDB893627AC584B00A2F018 /* NewsTableViewCell.swift */,
 				9DDB893727AC584B00A2F018 /* NewsTableViewCell.xib */,
+				9DB9F4B227B85C83005E878F /* GalleryView.swift */,
+				9DB9F4B427B85C9C005E878F /* GalleryView.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -135,6 +145,7 @@
 			children = (
 				9D2BDAD827989C8300AAC23A /* FriendsListTableViewController.swift */,
 				9D2BDAF0279C8F3000AAC23A /* FriedsPhotoCollectionViewController.swift */,
+				9D4CE82927B8196100DF6A4B /* PhotoGalleryViewViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -145,6 +156,7 @@
 				9D2A159027A6FF9A0032AB61 /* GradientView.swift */,
 				9DD05889279F39FF009D6B14 /* LikeButton.swift */,
 				9DDB893427AC3D0A00A2F018 /* CustomTittleView.swift */,
+				9DB9F4B627B917B2005E878F /* cloudView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -263,6 +275,7 @@
 				9DD986FB27877AC700C64C93 /* LaunchScreen.storyboard in Resources */,
 				9DD986F827877AC700C64C93 /* Assets.xcassets in Resources */,
 				9DD986F627877AC600C64C93 /* Main.storyboard in Resources */,
+				9DB9F4B527B85C9C005E878F /* GalleryView.xib in Resources */,
 				9D2BDADE27989D5B00AAC23A /* FriendsTableViewCell.xib in Resources */,
 				9DDB893927AC584B00A2F018 /* NewsTableViewCell.xib in Resources */,
 				9D2BDAF7279CA49400AAC23A /* UserPhotoCollectionViewCell.xib in Resources */,
@@ -280,6 +293,7 @@
 				9D2BDAE22799E44C00AAC23A /* GroupListTableViewController.swift in Sources */,
 				9D2BDAE9279B3A6100AAC23A /* GroupListCellModel.swift in Sources */,
 				9D3BE48B278B61CA001885C0 /* ScreenAfterLoginViewController.swift in Sources */,
+				9DB9F4B727B917B2005E878F /* cloudView.swift in Sources */,
 				9DDB893F27AC6EDB00A2F018 /* NewsModel.swift in Sources */,
 				9D2BDAF6279CA49400AAC23A /* UserPhotoCollectionViewCell.swift in Sources */,
 				9DF4991B27935C1600337F62 /* ForgotPasswordViewController.swift in Sources */,
@@ -287,10 +301,12 @@
 				9D2A159127A6FF9A0032AB61 /* GradientView.swift in Sources */,
 				9DD0588A279F39FF009D6B14 /* LikeButton.swift in Sources */,
 				9DDB893827AC584B00A2F018 /* NewsTableViewCell.swift in Sources */,
+				9D4CE82A27B8196100DF6A4B /* PhotoGalleryViewViewController.swift in Sources */,
 				9D2BDADD27989D5B00AAC23A /* FriendsTableViewCell.swift in Sources */,
 				9DDB893D27AC6A6F00A2F018 /* NewsTableViewController.swift in Sources */,
 				9D2BDAE72799F7A700AAC23A /* FriendsListCellModel.swift in Sources */,
 				9DF4991927935C0700337F62 /* SingUpViewController.swift in Sources */,
+				9DB9F4B327B85C83005E878F /* GalleryView.swift in Sources */,
 				9D2BDAEC279B49FB00AAC23A /* GlobalGroupListTableViewController.swift in Sources */,
 				9DD986EF27877AC600C64C93 /* AppDelegate.swift in Sources */,
 				9DD986F127877AC600C64C93 /* SceneDelegate.swift in Sources */,

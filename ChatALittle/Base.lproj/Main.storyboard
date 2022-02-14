@@ -676,11 +676,49 @@
                     <navigationItem key="navigationItem" id="wpT-Pc-aDM"/>
                     <connections>
                         <outlet property="friendPhotoCillectionView" destination="tQ5-hw-JLs" id="6f9-h4-UFW"/>
+                        <segue destination="FPq-ku-CF0" kind="show" identifier="goToGalleryPhoto" id="CVV-Bt-jb3"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1l3-Rh-xGH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3537" y="-237"/>
+        </scene>
+        <!--Photo Gallery View View Controller-->
+        <scene sceneID="v7H-0b-nww">
+            <objects>
+                <viewController storyboardIdentifier="PhotoGalleryViewViewController" modalPresentationStyle="fullScreen" id="FPq-ku-CF0" customClass="PhotoGalleryViewViewController" customModule="ChatALittle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JI0-Fm-F9F">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDc-y6-8e6" customClass="GradientView" customModule="ChatALittle" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="2l5-nW-GxG" customClass="GalleryView" customModule="ChatALittle" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="202" width="428" height="428"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="safeArea" id="jfb-hh-gTk"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VAa-Rd-luy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PDc-y6-8e6" firstAttribute="top" secondItem="JI0-Fm-F9F" secondAttribute="top" id="6ol-IQ-M5C"/>
+                            <constraint firstItem="PDc-y6-8e6" firstAttribute="trailing" secondItem="VAa-Rd-luy" secondAttribute="trailing" id="MDN-wT-QZG"/>
+                            <constraint firstItem="PDc-y6-8e6" firstAttribute="leading" secondItem="VAa-Rd-luy" secondAttribute="leading" id="Wgp-oH-QhY"/>
+                            <constraint firstAttribute="bottom" secondItem="PDc-y6-8e6" secondAttribute="bottom" id="u0F-Lj-vdF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Af-IB-ouJ"/>
+                    <connections>
+                        <outlet property="galleryView" destination="2l5-nW-GxG" id="mi3-uT-EOd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pz2-ih-jNs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4614.9532710280373" y="-237.1490280777538"/>
         </scene>
     </scenes>
     <resources>
@@ -701,6 +739,9 @@
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

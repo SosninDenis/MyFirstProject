@@ -15,7 +15,9 @@ class UserPhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet var numberOfLike: UILabel!
     @IBOutlet weak var likeView: LikeButton!
     private var changeNumberOfLikes:Int = 0
-    
+    @IBOutlet weak var buttonGoToGallery: UIButton!
+    var delegate: MyCellDelegate?
+
     
     @IBInspectable
     var shadowColor: UIColor? {
@@ -65,12 +67,8 @@ class UserPhotoCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         setupUIphoto()
         setupUILikes()
-        likeView.isUserInteractionEnabled = true
-        
     }
-    
-    
-    
+
     func setupUIphoto() {
         userPhotoImage.layer.cornerRadius = 125
         userPhotoImage.layer.borderWidth = 1
@@ -88,13 +86,16 @@ class UserPhotoCollectionViewCell: UICollectionViewCell {
     }
     
     func setupUILikes() {
-        likeView.isUserInteractionEnabled = true
+        
         likeView.backgroundColor = .clear
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(tapFunction))
         likeView.addGestureRecognizer(recognizer)
         numberOfLike.backgroundColor = .clear
+        likeView.isUserInteractionEnabled = true
+        
     }
     
+
     @objc func tapFunction () {
         likeView.checked.toggle()
         if likeView.checked {
@@ -117,5 +118,14 @@ class UserPhotoCollectionViewCell: UICollectionViewCell {
         
     }
     
+    @IBAction func tapButtonToPhoto(_ sender: UIButton) {
+        delegate?.tapButtonToPhoto()
+    }
+
 }
+
+protocol MyCellDelegate {
+    func tapButtonToPhoto()
+}
+
 

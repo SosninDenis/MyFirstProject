@@ -82,6 +82,18 @@
                             <constraint firstAttribute="width" constant="40" id="3Fu-HG-Ox7"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3G-TP-A0s">
+                        <rect key="frame" x="50" y="449" width="250" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="31" id="3nN-ef-yRq"/>
+                        </constraints>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="Галлерея фотографий"/>
+                        <connections>
+                            <action selector="tapButtonToPhoto:" destination="gTV-IL-0wX" eventType="touchUpInside" id="lBI-fc-pOJ"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -89,10 +101,13 @@
                 <constraint firstItem="BfN-0i-TPN" firstAttribute="top" secondItem="jZQ-oF-zxY" secondAttribute="bottom" constant="100" id="0eO-AJ-aNW"/>
                 <constraint firstAttribute="trailing" secondItem="YbD-Da-9s0" secondAttribute="trailing" constant="50" id="9PH-c5-YJ6"/>
                 <constraint firstItem="jZQ-oF-zxY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="50" id="Dam-h5-ia9"/>
+                <constraint firstAttribute="trailing" secondItem="y3G-TP-A0s" secondAttribute="trailing" constant="50" id="E1R-B8-6G6"/>
                 <constraint firstItem="K4J-H2-smk" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Ic0-ZZ-dWO"/>
                 <constraint firstItem="YbD-Da-9s0" firstAttribute="top" secondItem="jZQ-oF-zxY" secondAttribute="bottom" constant="100" id="OkL-66-LVe"/>
+                <constraint firstItem="y3G-TP-A0s" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="50" id="dhx-SC-Cvx"/>
                 <constraint firstItem="K4J-H2-smk" firstAttribute="top" secondItem="jZQ-oF-zxY" secondAttribute="bottom" constant="60" id="oos-gI-jHl"/>
                 <constraint firstItem="jZQ-oF-zxY" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="pfe-sR-eXy"/>
+                <constraint firstItem="y3G-TP-A0s" firstAttribute="top" secondItem="BfN-0i-TPN" secondAttribute="bottom" constant="14" id="un4-Te-lUK"/>
                 <constraint firstItem="BfN-0i-TPN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="50" id="wnG-xe-8z7"/>
             </constraints>
             <size key="customSize" width="400" height="550"/>
@@ -114,6 +129,7 @@
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="buttonGoToGallery" destination="y3G-TP-A0s" id="hSX-in-NxW"/>
                 <outlet property="likeView" destination="YbD-Da-9s0" id="vKJ-ZJ-sh4"/>
                 <outlet property="numberOfLike" destination="BfN-0i-TPN" id="Vtl-ZM-77H"/>
                 <outlet property="photoShadow" destination="jZQ-oF-zxY" id="xla-cD-KaH"/>

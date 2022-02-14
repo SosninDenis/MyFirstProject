@@ -46,7 +46,7 @@ class NewsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setGradientBackground()
+        //setGradientBackground()
         registerTableViewCells()
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 550
