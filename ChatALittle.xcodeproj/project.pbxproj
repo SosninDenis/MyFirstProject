@@ -20,6 +20,8 @@
 		9D2BDAF7279CA49400AAC23A /* UserPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D2BDAF5279CA49400AAC23A /* UserPhotoCollectionViewCell.xib */; };
 		9D3BE48B278B61CA001885C0 /* ScreenAfterLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3BE48A278B61CA001885C0 /* ScreenAfterLoginViewController.swift */; };
 		9D4CE82A27B8196100DF6A4B /* PhotoGalleryViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4CE82927B8196100DF6A4B /* PhotoGalleryViewViewController.swift */; };
+		9D71CE3427BC353700308A98 /* ServerNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71CE3327BC353700308A98 /* ServerNewsModel.swift */; };
+		9D71CE3627BC35A700308A98 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71CE3527BC35A700308A98 /* Service.swift */; };
 		9DB9F4B327B85C83005E878F /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9F4B227B85C83005E878F /* GalleryView.swift */; };
 		9DB9F4B527B85C9C005E878F /* GalleryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DB9F4B427B85C9C005E878F /* GalleryView.xib */; };
 		9DB9F4B727B917B2005E878F /* cloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9F4B627B917B2005E878F /* cloudView.swift */; };
@@ -54,6 +56,8 @@
 		9D2BDAF5279CA49400AAC23A /* UserPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		9D3BE48A278B61CA001885C0 /* ScreenAfterLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenAfterLoginViewController.swift; sourceTree = "<group>"; };
 		9D4CE82927B8196100DF6A4B /* PhotoGalleryViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryViewViewController.swift; sourceTree = "<group>"; };
+		9D71CE3327BC353700308A98 /* ServerNewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerNewsModel.swift; sourceTree = "<group>"; };
+		9D71CE3527BC35A700308A98 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		9DB9F4B227B85C83005E878F /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		9DB9F4B427B85C9C005E878F /* GalleryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryView.xib; sourceTree = "<group>"; };
 		9DB9F4B627B917B2005E878F /* cloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cloudView.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 				9D2BDAE62799F7A700AAC23A /* FriendsListCellModel.swift */,
 				9D2BDAE8279B3A6100AAC23A /* GroupListCellModel.swift */,
 				9DDB893E27AC6EDB00A2F018 /* NewsModel.swift */,
+				9D71CE3327BC353700308A98 /* ServerNewsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				9DDB893C27AC6A6F00A2F018 /* NewsTableViewController.swift */,
+				9D71CE3527BC35A700308A98 /* Service.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -290,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DD987072788D93A00C64C93 /* LoginFormController.swift in Sources */,
+				9D71CE3627BC35A700308A98 /* Service.swift in Sources */,
 				9D2BDAE22799E44C00AAC23A /* GroupListTableViewController.swift in Sources */,
 				9D2BDAE9279B3A6100AAC23A /* GroupListCellModel.swift in Sources */,
 				9D3BE48B278B61CA001885C0 /* ScreenAfterLoginViewController.swift in Sources */,
@@ -306,6 +313,7 @@
 				9DDB893D27AC6A6F00A2F018 /* NewsTableViewController.swift in Sources */,
 				9D2BDAE72799F7A700AAC23A /* FriendsListCellModel.swift in Sources */,
 				9DF4991927935C0700337F62 /* SingUpViewController.swift in Sources */,
+				9D71CE3427BC353700308A98 /* ServerNewsModel.swift in Sources */,
 				9DB9F4B327B85C83005E878F /* GalleryView.swift in Sources */,
 				9D2BDAEC279B49FB00AAC23A /* GlobalGroupListTableViewController.swift in Sources */,
 				9DD986EF27877AC600C64C93 /* AppDelegate.swift in Sources */,
