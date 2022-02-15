@@ -8,8 +8,8 @@
 import Foundation
 
 struct ServerNewsModel: Codable {
-    var albumId: Int
-    var id: Int
+    var albumId: Double
+    var id: Double
     var title: String
     var url: URL
     var thumbnailUrl: URL

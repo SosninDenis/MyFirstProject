@@ -22,8 +22,8 @@ class Service {
             
             DispatchQueue.main.async {
                 do {
-                    let codableData = try JSONDecoder().decode(ServerNewsModel.self, from: validData)
-                    complition?([codableData])
+                    let codableData = try JSONDecoder().decode([ServerNewsModel].self, from: validData)
+                    complition?(codableData)
                 } catch let error {
                     print("Catch error", error.localizedDescription)
                 }
