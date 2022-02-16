@@ -22,6 +22,7 @@
 		9D4CE82A27B8196100DF6A4B /* PhotoGalleryViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4CE82927B8196100DF6A4B /* PhotoGalleryViewViewController.swift */; };
 		9D71CE3427BC353700308A98 /* ServerNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71CE3327BC353700308A98 /* ServerNewsModel.swift */; };
 		9D71CE3627BC35A700308A98 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71CE3527BC35A700308A98 /* Service.swift */; };
+		9D71CE3927BC4D1700308A98 /* TestModelGroup.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D71CE3727BC4D1700308A98 /* TestModelGroup.xcdatamodeld */; };
 		9DB9F4B327B85C83005E878F /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9F4B227B85C83005E878F /* GalleryView.swift */; };
 		9DB9F4B527B85C9C005E878F /* GalleryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DB9F4B427B85C9C005E878F /* GalleryView.xib */; };
 		9DB9F4B727B917B2005E878F /* cloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9F4B627B917B2005E878F /* cloudView.swift */; };
@@ -58,6 +59,7 @@
 		9D4CE82927B8196100DF6A4B /* PhotoGalleryViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryViewViewController.swift; sourceTree = "<group>"; };
 		9D71CE3327BC353700308A98 /* ServerNewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerNewsModel.swift; sourceTree = "<group>"; };
 		9D71CE3527BC35A700308A98 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		9D71CE3827BC4D1700308A98 /* TestModelGroup.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModelGroup.xcdatamodel; sourceTree = "<group>"; };
 		9DB9F4B227B85C83005E878F /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		9DB9F4B427B85C9C005E878F /* GalleryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryView.xib; sourceTree = "<group>"; };
 		9DB9F4B627B917B2005E878F /* cloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cloudView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			children = (
 				9D2BDAE12799E44C00AAC23A /* GroupListTableViewController.swift */,
 				9D2BDAEB279B49FB00AAC23A /* GlobalGroupListTableViewController.swift */,
+				9D71CE3727BC4D1700308A98 /* TestModelGroup.xcdatamodeld */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				9D2BDAE9279B3A6100AAC23A /* GroupListCellModel.swift in Sources */,
 				9D3BE48B278B61CA001885C0 /* ScreenAfterLoginViewController.swift in Sources */,
 				9DB9F4B727B917B2005E878F /* cloudView.swift in Sources */,
+				9D71CE3927BC4D1700308A98 /* TestModelGroup.xcdatamodeld in Sources */,
 				9DDB893F27AC6EDB00A2F018 /* NewsModel.swift in Sources */,
 				9D2BDAF6279CA49400AAC23A /* UserPhotoCollectionViewCell.swift in Sources */,
 				9DF4991B27935C1600337F62 /* ForgotPasswordViewController.swift in Sources */,
@@ -540,6 +544,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9D71CE3727BC4D1700308A98 /* TestModelGroup.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9D71CE3827BC4D1700308A98 /* TestModelGroup.xcdatamodel */,
+			);
+			currentVersion = 9D71CE3827BC4D1700308A98 /* TestModelGroup.xcdatamodel */;
+			path = TestModelGroup.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9DD986E327877AC600C64C93 /* Project object */;
 }

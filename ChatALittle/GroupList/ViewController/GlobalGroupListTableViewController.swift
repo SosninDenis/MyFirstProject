@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class GlobalGroupListTableViewController: UITableViewController {
     
@@ -62,10 +63,12 @@ class GlobalGroupListTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addGroup" {
+            
+
             if let indexPath = tableView.indexPathForSelectedRow {
                 let groupSend = filteredGroupArray[indexPath.row]
                 let newVC = segue.destination as! GroupListTableViewController
-                newVC.groupList.append(groupSend)
+                newVC.saveName(newImageName: filteredGroupArray[indexPath.row].groupImage, newGroupName: filteredGroupArray[indexPath.row].groupName)
             }
         }
     }
@@ -88,3 +91,5 @@ extension GlobalGroupListTableViewController: UISearchBarDelegate {
         self.tableView.reloadData()
     }
 }
+
+

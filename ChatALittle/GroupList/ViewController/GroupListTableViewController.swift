@@ -6,19 +6,22 @@
 //
 
 import UIKit
+import CoreData
 
 class GroupListTableViewController: UITableViewController {
     
-    var groupList: [GroupListCellModel] = [.init(groupName: "BMW CLub", groupImage: "bmw"),
-                                           .init(groupName: "ФК Зенит", groupImage: "zenit"),
-                                           .init(groupName: "Сбербанк", groupImage: "sber"),
-                                           .init(groupName: "News", groupImage: "news")]
+    var groupList: [GroupModelTest] = []
     @IBOutlet var groupListTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableViewCells()
         setGradientBackground()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchData()
     }
     
     private func setGradientBackground() {
@@ -45,12 +48,14 @@ class GroupListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let currentUserGroupList = groupList[indexPath.row]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCellId", for: indexPath) as! FriendsTableViewCell
         cell.backgroundColor = .clear
-        cell.imageViewName.image = UIImage(named: currentUserGroupList.groupImage)
+        cell.imageViewName.image = UIImage(named: currentUserGroupList.groupImage!)
         cell.friendsNameLabel?.text = currentUserGroupList.groupName
         cell.accessoryType = .disclosureIndicator
         return cell
+    
     }
     
     @IBAction func addGroup(segue: UIStoryboardSegue) {
@@ -61,15 +66,64 @@ class GroupListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            groupList.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            let model = groupList[indexPath.row]
+            deleteData(with: model)
+            updateData()
         }
+        
+        tableView.reloadData()
     }
 }
 
 private extension GroupListTableViewController {
     func registerTableViewCells() {
         tableView.register(FriendsTableViewCell.nib(), forCellReuseIdentifier: "FriendsTableViewCellId")
+    }
+}
+
+
+
+extension GroupListTableViewController {
+    
+    func saveName (newImageName: String, newGroupName: String) {
+            // Get our database
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            // Get model(Person)
+            let person = GroupModelTest(entity: GroupModelTest().entity, insertInto: context)
+            let groupNameKey = "groupName"
+            let groupImageKet = "groupImage"
+            // Set data inton Person(for key "name")
+            person.setValue(newGroupName, forKey: groupNameKey)
+            person.setValue(newImageName, forKey: groupImageKet)
+            do {
+                try context.save()
+                groupList.append(person)
+            } catch let error {
+                debugPrint("Could not save", error)
+            }
+            
+            self.tableView.reloadData()
+        }
+
+    
+    func fetchData() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        do {
+            let result = try context.fetch(GroupModelTest.fetchRequest())
+            groupList = result as! [GroupModelTest]
+        } catch let error {
+            debugPrint("Could not save", error)
+        }
+    }
+    
+    func deleteData(with model: GroupModelTest) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        context.delete(model)
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+    }
+    
+    func updateData() {
+        fetchData()
     }
 }
 
