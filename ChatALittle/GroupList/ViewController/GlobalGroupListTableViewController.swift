@@ -64,7 +64,7 @@ class GlobalGroupListTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addGroup" {
             
-
+            
             if let indexPath = tableView.indexPathForSelectedRow {
                 let groupSend = filteredGroupArray[indexPath.row]
                 let newVC = segue.destination as! GroupListTableViewController

@@ -9,14 +9,13 @@ import UIKit
 
 class NewsTableViewController: UITableViewController {
     
-
+    
     var newsArray: [ServerNewsModel] = []
     var service = Service()
     var views: [Int] = []
     let a = 0
     @IBOutlet var newsTableView: UITableView!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableViewCells()
@@ -24,24 +23,22 @@ class NewsTableViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 550
     }
-
+    
     public var screenWidth: CGFloat {
         return UIScreen.main.bounds.width
     }
-
+    
     func getData() {
         service.reguest { codabelData in
             self.newsArray = codabelData
             self.tableView.reloadData()
             print(codabelData, "Fetch")
-            
             for _ in 0...self.newsArray.count - 1 {
                 self.views.append(self.a)
             }
         }
     }
 
-    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -56,7 +53,7 @@ class NewsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCellId", for: indexPath) as! NewsTableViewCell
         cell.newsTextLable.text = newsArray[indexPath.row].title
         cell.setupUIImage(imageName: newsArray[indexPath.row].url)
-
+        
         let timeCounters = views[indexPath.row] + 1
         views[indexPath.row] = timeCounters
         cell.setupNumbersOfViews(number: String(timeCounters))

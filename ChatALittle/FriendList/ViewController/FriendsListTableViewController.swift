@@ -25,7 +25,6 @@ class FriendsListTableViewController: UITableViewController {
         return UIScreen.main.bounds.width
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableViewCells()

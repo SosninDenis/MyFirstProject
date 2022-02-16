@@ -55,7 +55,7 @@ class GroupListTableViewController: UITableViewController {
         cell.friendsNameLabel?.text = currentUserGroupList.groupName
         cell.accessoryType = .disclosureIndicator
         return cell
-    
+        
     }
     
     @IBAction func addGroup(segue: UIStoryboardSegue) {
@@ -81,30 +81,27 @@ private extension GroupListTableViewController {
     }
 }
 
-
-
 extension GroupListTableViewController {
     
     func saveName (newImageName: String, newGroupName: String) {
-            // Get our database
-            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            // Get model(Person)
-            let person = GroupModelTest(entity: GroupModelTest().entity, insertInto: context)
-            let groupNameKey = "groupName"
-            let groupImageKet = "groupImage"
-            // Set data inton Person(for key "name")
-            person.setValue(newGroupName, forKey: groupNameKey)
-            person.setValue(newImageName, forKey: groupImageKet)
-            do {
-                try context.save()
-                groupList.append(person)
-            } catch let error {
-                debugPrint("Could not save", error)
-            }
-            
-            self.tableView.reloadData()
+        // Get our database
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        // Get model(Person)
+        let person = GroupModelTest(entity: GroupModelTest().entity, insertInto: context)
+        let groupNameKey = "groupName"
+        let groupImageKet = "groupImage"
+        // Set data inton Person(for key "name")
+        person.setValue(newGroupName, forKey: groupNameKey)
+        person.setValue(newImageName, forKey: groupImageKet)
+        do {
+            try context.save()
+            groupList.append(person)
+        } catch let error {
+            debugPrint("Could not save", error)
         }
-
+        
+        self.tableView.reloadData()
+    }
     
     func fetchData() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext

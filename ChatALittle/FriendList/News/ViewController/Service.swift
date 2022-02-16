@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 class Service {
-    
     func reguest(complition: (([ServerNewsModel]) -> ())?) {
         let httpURL = URL(string: "https://jsonplaceholder.typicode.com/photos/")!
         let httpSession = URLSession.shared.dataTask(with: httpURL) { (data, response, error) in
@@ -31,6 +30,5 @@ class Service {
         }
         httpSession.resume()
     }
-    
 }
 
