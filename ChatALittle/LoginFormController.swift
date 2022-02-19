@@ -44,6 +44,11 @@ class LoginFormController: UIViewController {
         if !checkResult {
             showLoginError()
         }
+        let userData = Session.shared
+        
+        userData.token = UUID().uuidString
+        userData.userId = 1
+        print (userData.token)
         return checkResult
     }
     

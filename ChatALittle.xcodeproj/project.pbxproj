@@ -23,6 +23,7 @@
 		9D71CE3427BC353700308A98 /* ServerNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71CE3327BC353700308A98 /* ServerNewsModel.swift */; };
 		9D71CE3627BC35A700308A98 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71CE3527BC35A700308A98 /* Service.swift */; };
 		9D71CE3927BC4D1700308A98 /* TestModelGroup.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D71CE3727BC4D1700308A98 /* TestModelGroup.xcdatamodeld */; };
+		9D71CE3B27BEE2E300308A98 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71CE3A27BEE2E300308A98 /* Session.swift */; };
 		9DB9F4B327B85C83005E878F /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9F4B227B85C83005E878F /* GalleryView.swift */; };
 		9DB9F4B527B85C9C005E878F /* GalleryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DB9F4B427B85C9C005E878F /* GalleryView.xib */; };
 		9DB9F4B727B917B2005E878F /* cloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9F4B627B917B2005E878F /* cloudView.swift */; };
@@ -60,6 +61,7 @@
 		9D71CE3327BC353700308A98 /* ServerNewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerNewsModel.swift; sourceTree = "<group>"; };
 		9D71CE3527BC35A700308A98 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		9D71CE3827BC4D1700308A98 /* TestModelGroup.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModelGroup.xcdatamodel; sourceTree = "<group>"; };
+		9D71CE3A27BEE2E300308A98 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		9DB9F4B227B85C83005E878F /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		9DB9F4B427B85C9C005E878F /* GalleryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryView.xib; sourceTree = "<group>"; };
 		9DB9F4B627B917B2005E878F /* cloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cloudView.swift; sourceTree = "<group>"; };
@@ -120,6 +122,14 @@
 				9D71CE3327BC353700308A98 /* ServerNewsModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9D71CE3C27BEE54C00308A98 /* Session Group */ = {
+			isa = PBXGroup;
+			children = (
+				9D71CE3A27BEE2E300308A98 /* Session.swift */,
+			);
+			path = "Session Group";
 			sourceTree = "<group>";
 		};
 		9DC27C72279754AC0006EC94 /* FriendList */ = {
@@ -193,6 +203,7 @@
 				9DD986EE27877AC600C64C93 /* AppDelegate.swift */,
 				9DD986F027877AC600C64C93 /* SceneDelegate.swift */,
 				9DD986F427877AC600C64C93 /* Main.storyboard */,
+				9D71CE3C27BEE54C00308A98 /* Session Group */,
 				9DDEACE927B05B7000835CE5 /* AnimatedLoadViewController.swift */,
 				9DF4991827935C0700337F62 /* SingUpViewController.swift */,
 				9DF4991A27935C1600337F62 /* ForgotPasswordViewController.swift */,
@@ -298,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D71CE3B27BEE2E300308A98 /* Session.swift in Sources */,
 				9DD987072788D93A00C64C93 /* LoginFormController.swift in Sources */,
 				9D71CE3627BC35A700308A98 /* Service.swift in Sources */,
 				9D2BDAE22799E44C00AAC23A /* GroupListTableViewController.swift in Sources */,
