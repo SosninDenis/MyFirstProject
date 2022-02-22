@@ -8,25 +8,20 @@
 import UIKit
 
 class PhotoGalleryViewViewController: UIViewController {
+    @IBOutlet weak var galleryView: GalleryView!
     var currentUserProfile: [FriendsListCellModel] = []
    
     private var screenWidth: CGFloat {
         return UIScreen.main.bounds.width
     }
-    
-    @IBOutlet weak var galleryView: GalleryView!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-
     }
 
     func setupUI () {
         let images = currentUserProfile[0].imageName
         galleryView.setImages(images: images)
     }
-
-
 }

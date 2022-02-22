@@ -90,12 +90,22 @@ class NewsTableViewCell: UITableViewCell {
         likeView.setNeedsDisplay()
     }
     
-    func setupUIImage(imageName: String){
-        newsPhotoImage.image = UIImage(named: imageName)
-    }
+//    func setupUIImage(imageName: String){
+//        newsPhotoImage.image = UIImage(named: imageName)
+//    }
     
-    func setupNewsTextLabel(newsText: String) {
-        newsTextLable.text = newsText
+    func setupUIImage(imageName: URL){
+
+                DispatchQueue.global().async { [weak self] in
+                    if let data = try? Data(contentsOf: imageName) {
+                        if let image = UIImage(data: data) {
+                            DispatchQueue.main.async {
+                                self?.newsPhotoImage.image = image
+                            }
+                        }
+                    }
+                }
+
     }
     
     func setupCommensTextFild() {

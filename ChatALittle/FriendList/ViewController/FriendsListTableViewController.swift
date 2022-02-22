@@ -11,10 +11,10 @@ class FriendsListTableViewController: UITableViewController {
     
     @IBOutlet var friendListTableView: UITableView!
     
-    var contactList: [FriendsListCellModel] = [.init(name: "Джейсон", surnName: "Стетхем", imageName: [UIImage(named: "stet1")!, UIImage(named: "stet2")!, UIImage(named: "stet3")!], userID: 4),
+    var contactList: [FriendsListCellModel] = [.init(name: "Джейсон", surnName: "Стетхем", imageName: [UIImage(named: "Stet1")!, UIImage(named: "Stet2")!, UIImage(named: "Stet3")!], userID: 4),
                                                .init(name: "Барак", surnName: "Абама", imageName: [UIImage(named: "barak")!, UIImage(named: "barak1")!, UIImage(named: "barak2")!, UIImage(named: "barak3")!,], userID: 1),
                                                .init(name: "Мерлин", surnName: "Мансоне", imageName: [UIImage(named: "merlin")!], userID: 2),
-                                               .init(name: "Джесика", surnName: "Альба", imageName: [UIImage(named: "alba1")!, UIImage(named: "alba2")!, UIImage(named: "alba3")!], userID: 3),
+                                               .init(name: "Джесика", surnName: "Альба", imageName: [UIImage(named: "Alba1")!, UIImage(named: "Alba2")!, UIImage(named: "Alba3")!], userID: 3),
                                                .init(name: "Железный", surnName: "Арни", imageName: [UIImage(named: "arni1")!, UIImage(named: "arni2")!, UIImage(named: "arni3")!, UIImage(named: "arni4")!,], userID: 6),
                                                .init(name: "Гадя Петрович", surnName: "Хренова", imageName: [UIImage(named: "gadya")!, UIImage(named: "gadya1")!, UIImage(named: "gadya2")!, UIImage(named: "gadya3")! ], userID: 5)]
     var finalArray = [Character]()
@@ -24,7 +24,6 @@ class FriendsListTableViewController: UITableViewController {
     private var screenWidth: CGFloat {
         return UIScreen.main.bounds.width
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

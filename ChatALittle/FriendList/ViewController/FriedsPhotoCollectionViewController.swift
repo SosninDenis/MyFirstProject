@@ -10,19 +10,16 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 @IBDesignable class FriedsPhotoCollectionViewController: UICollectionViewController, MyCellDelegate {
-    
 
-    
     @IBOutlet var friendPhotoCillectionView: UICollectionView!
     
     var currentUserProfile: [FriendsListCellModel] = []
-   
-override func viewDidLoad() {
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         registerTableViewCells()
         setGradientBackground()
     }
-    
     
     private func setGradientBackground() {
         let gradientLayer = CAGradientLayer()
@@ -33,7 +30,6 @@ override func viewDidLoad() {
         backgroundView.layer.insertSublayer(gradientLayer, at: .zero)
         friendPhotoCillectionView.backgroundView = backgroundView
     }
-    
     
     // MARK: UICollectionViewDataSource
     
@@ -60,21 +56,16 @@ override func viewDidLoad() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let secondViewController = storyboard.instantiateViewController(identifier: "PhotoGalleryViewViewController") as? PhotoGalleryViewViewController else { return }
         secondViewController.currentUserProfile.append(currentUserProfile[0])
-        
         show(secondViewController, sender: nil)
- 
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "goToGalleryPhoto"{
-        guard let photoGalleryViewViewController = segue.destination as? PhotoGalleryViewViewController,
-              let sendUserData = sender as? FriendsListCellModel else { return }
-        photoGalleryViewViewController.currentUserProfile.append(sendUserData)
+        if segue.identifier == "goToGalleryPhoto"{
+            guard let photoGalleryViewViewController = segue.destination as? PhotoGalleryViewViewController,
+                  let sendUserData = sender as? FriendsListCellModel else { return }
+            photoGalleryViewViewController.currentUserProfile.append(sendUserData)
+        }
     }
-}
-
-    
 }
 
 private extension FriedsPhotoCollectionViewController {

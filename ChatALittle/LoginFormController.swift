@@ -14,12 +14,12 @@ class LoginFormController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var singUpButton: UIButton!
     @IBOutlet weak var forgotPasswordButton: UIButton!
-
+    
     @IBOutlet var mainView: UIView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     @IBAction func didTapButtonLogin(_ sender: Any) {
@@ -40,11 +40,16 @@ class LoginFormController: UIViewController {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-            let checkResult = checkUserData()
-            if !checkResult {
-                showLoginError()
-            }
-            return checkResult
+        let checkResult = checkUserData()
+        if !checkResult {
+            showLoginError()
+        }
+        let userData = Session.shared
+        
+        userData.token = UUID().uuidString
+        userData.userId = 1
+        print (userData.token)
+        return checkResult
     }
     
     func checkUserData() -> Bool {
@@ -64,10 +69,9 @@ class LoginFormController: UIViewController {
         alter.addAction(action)
         present(alter, animated: true, completion: nil)
     }
-
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-
-    
+  
 }
