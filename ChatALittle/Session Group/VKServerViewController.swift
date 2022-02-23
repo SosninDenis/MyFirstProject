@@ -44,7 +44,7 @@ class VKServerViewController: UIViewController {
 // Запрос данных о пользователе (Имя, Фамилия, дата рождения)
     func sendRequestForUserName () {
         let requestFriendList = URLSessionConfiguration.default
-        let session1 = URLSession(configuration: requestFriendList)
+        let session = URLSession(configuration: requestFriendList)
         var urlContructor = URLComponents()
         urlContructor.scheme = "https"
         urlContructor.host = "api.vk.com"
@@ -55,18 +55,18 @@ class VKServerViewController: UIViewController {
             .init(name: "access_token", value: userData.token),
             .init(name: "v", value: "5.131")
         ]
-        let task1 = session1.dataTask(with: urlContructor.url!) { (data, response, error) in
+        let task = session.dataTask(with: urlContructor.url!) { (data, response, error) in
             let json = try? JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
             print(json, "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥")
         }
-        task1.resume()
+        task.resume()
      //https://api.vk.com/method/METHOD?PARAMS&access_token=TOKEN&v=V
     }
     
     // Запрос списка групп пользователя
-    func sendRequestForFriendList () {
+    func sendRequestForGroupList () {
         let requestFriendList = URLSessionConfiguration.default
-        let session1 = URLSession(configuration: requestFriendList)
+        let session = URLSession(configuration: requestFriendList)
         var urlContructor = URLComponents()
         urlContructor.scheme = "https"
         urlContructor.host = "api.vk.com"
@@ -77,13 +77,85 @@ class VKServerViewController: UIViewController {
             .init(name: "access_token", value: userData.token),
             .init(name: "v", value: "5.131")
         ]
-        let task1 = session1.dataTask(with: urlContructor.url!) { (data, response, error) in
+        let task = session.dataTask(with: urlContructor.url!) { (data, response, error) in
+            let json = try? JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
+            print(json, "💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫")
+        }
+        task.resume()
+     //https://api.vk.com/method/METHOD?PARAMS&access_token=TOKEN&v=V
+    }
+    
+    // Запрос списка фотографий пользователя
+    func sendRequestForUsersPhoto () {
+        let requestFriendList = URLSessionConfiguration.default
+        let session = URLSession(configuration: requestFriendList)
+        var urlContructor = URLComponents()
+        urlContructor.scheme = "https"
+        urlContructor.host = "api.vk.com"
+        urlContructor.path = "/method/photos.getAll"
+        urlContructor.queryItems = [
+            .init(name: "owner_id", value: userData.userId),
+            .init(name: "photo_sizes", value: "1"),
+            .init(name: "extended", value: "1"),
+            .init(name: "count", value: "100"),
+            .init(name: "access_token", value: userData.token),
+            .init(name: "v", value: "5.131")
+        ]
+        let task = session.dataTask(with: urlContructor.url!) { (data, response, error) in
             let json = try? JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
             print(json, "🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈")
         }
-        task1.resume()
-     //https://api.vk.com/method/METHOD?PARAMS&access_token=TOKEN&v=V
+        task.resume()
+
     }
+    
+    // Запрос списка друзей пользователя
+    func sendRequestForUsersFriens () {
+        let requestFriendList = URLSessionConfiguration.default
+        let session = URLSession(configuration: requestFriendList)
+        var urlContructor = URLComponents()
+        urlContructor.scheme = "https"
+        urlContructor.host = "api.vk.com"
+        urlContructor.path = "/method/friends.get"
+        urlContructor.queryItems = [
+            .init(name: "user_id", value: userData.userId),
+            .init(name: "order", value: "name"),
+            .init(name: "fields", value: "bdate,nickname,online,photo_50"),
+            .init(name: "access_token", value: userData.token),
+            .init(name: "v", value: "5.131")
+        ]
+        let task = session.dataTask(with: urlContructor.url!) { (data, response, error) in
+            let json = try? JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
+            print(json, "❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️")
+        }
+        task.resume()
+
+    }
+    
+    // запрос на поиск группы
+    func sendRequestForSearchGroup (searchGroup:String) {
+        let searchGroup = searchGroup
+        let requestFriendList = URLSessionConfiguration.default
+        let session = URLSession(configuration: requestFriendList)
+        var urlContructor = URLComponents()
+        urlContructor.scheme = "https"
+        urlContructor.host = "api.vk.com"
+        urlContructor.path = "/method/groups.search"
+        urlContructor.queryItems = [
+            .init(name: "q", value: searchGroup),
+            .init(name: "type", value: "group"),
+            .init(name: "sort", value: "6"),
+            .init(name: "access_token", value: userData.token),
+            .init(name: "v", value: "5.131")
+        ]
+        let task = session.dataTask(with: urlContructor.url!) { (data, response, error) in
+            let json = try? JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
+            print(json, "☂️☂️☂️☂️☂️☂️☂️☂️☂️☂️☂️☂️☂️☂️☂️☂️☂️☂️☂️☂️☂️")
+        }
+        task.resume()
+
+    }
+    
     
     
     
@@ -100,15 +172,21 @@ class VKServerViewController: UIViewController {
         if SearchTextField.text != nil {
         searchGroup = SearchTextField.text!
         }
-        sendRequestForUserName()
-        sendRequestForFriendList()
+        sendRequestForSearchGroup(searchGroup: searchGroup)
 
-        
-        
-        
-        
     }
 
+    @IBAction func tapButtonSendRequestPhoto(_ sender: Any) {
+        sendRequestForUserName()
+        sendRequestForUsersPhoto()
+        sendRequestForUsersFriens()
+    }
+    @IBAction func tapButtonToSendRequestAllUsersGroup(_ sender: Any) {
+        sendRequestForGroupList()
+    }
+    
+    
+    
 }
 
 extension VKServerViewController: WKNavigationDelegate {
@@ -127,7 +205,6 @@ extension VKServerViewController: WKNavigationDelegate {
                 let key = param[0]
                 let value = param[1]
                 dict[key] = value
-                print(dict, "💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥")
                 return dict
         }
 
@@ -138,9 +215,7 @@ extension VKServerViewController: WKNavigationDelegate {
         if token != nil, userID != nil {
             userData.token = token!
             userData.userId = userID!
-            print (userData.token, "⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️")
         }
-
         decisionHandler(.cancel)
     }
 }
