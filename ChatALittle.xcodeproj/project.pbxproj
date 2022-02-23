@@ -24,6 +24,7 @@
 		9D71CE3627BC35A700308A98 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71CE3527BC35A700308A98 /* Service.swift */; };
 		9D71CE3927BC4D1700308A98 /* TestModelGroup.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D71CE3727BC4D1700308A98 /* TestModelGroup.xcdatamodeld */; };
 		9D71CE3B27BEE2E300308A98 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71CE3A27BEE2E300308A98 /* Session.swift */; };
+		9D9E495127C670000026B8A7 /* VKServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9E495027C670000026B8A7 /* VKServerViewController.swift */; };
 		9DB9F4B327B85C83005E878F /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9F4B227B85C83005E878F /* GalleryView.swift */; };
 		9DB9F4B527B85C9C005E878F /* GalleryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DB9F4B427B85C9C005E878F /* GalleryView.xib */; };
 		9DB9F4B727B917B2005E878F /* cloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9F4B627B917B2005E878F /* cloudView.swift */; };
@@ -62,6 +63,7 @@
 		9D71CE3527BC35A700308A98 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		9D71CE3827BC4D1700308A98 /* TestModelGroup.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModelGroup.xcdatamodel; sourceTree = "<group>"; };
 		9D71CE3A27BEE2E300308A98 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		9D9E495027C670000026B8A7 /* VKServerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKServerViewController.swift; sourceTree = "<group>"; };
 		9DB9F4B227B85C83005E878F /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		9DB9F4B427B85C9C005E878F /* GalleryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryView.xib; sourceTree = "<group>"; };
 		9DB9F4B627B917B2005E878F /* cloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cloudView.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				9D71CE3A27BEE2E300308A98 /* Session.swift */,
+				9D9E495027C670000026B8A7 /* VKServerViewController.swift */,
 			);
 			path = "Session Group";
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				9DD986F127877AC600C64C93 /* SceneDelegate.swift in Sources */,
 				9D2BDAF1279C8F3000AAC23A /* FriedsPhotoCollectionViewController.swift in Sources */,
 				9DDB893527AC3D0A00A2F018 /* CustomTittleView.swift in Sources */,
+				9D9E495127C670000026B8A7 /* VKServerViewController.swift in Sources */,
 				9D2BDAD927989C8300AAC23A /* FriendsListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

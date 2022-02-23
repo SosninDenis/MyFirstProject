@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WcJ-S3-uY7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e5z-p9-cYJ">
     <device id="retina6_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -266,6 +266,96 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VVQ-bR-EM4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1571" y="54"/>
+        </scene>
+        <!--Server View Controller-->
+        <scene sceneID="vjn-W4-Dg3">
+            <objects>
+                <viewController id="e5z-p9-cYJ" customClass="VKServerViewController" customModule="ChatALittle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UMx-7B-GrR">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLz-CS-oH2">
+                                <rect key="frame" x="0.0" y="44" width="428" height="548"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Запрос групп" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ypR-Yt-6nu">
+                                <rect key="frame" x="20" y="600" width="388" height="34"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="OGD-sZ-b6N"/>
+                                </constraints>
+                                <color key="textColor" systemColor="systemGroupedBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKF-fG-ju8">
+                                <rect key="frame" x="20" y="642" width="388" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="39y-5x-kxj"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Search groups"/>
+                                <connections>
+                                    <action selector="tapButtonSendRequest:" destination="e5z-p9-cYJ" eventType="touchUpInside" id="fQu-A3-81F"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKo-C3-8XU">
+                                <rect key="frame" x="20" y="681" width="388" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="5M6-bn-rHz"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Request User's photo and friends"/>
+                                <connections>
+                                    <action selector="tapButtonSendRequestPhoto:" destination="e5z-p9-cYJ" eventType="touchUpInside" id="xYM-xE-6wq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPC-1k-QV4">
+                                <rect key="frame" x="20" y="720" width="388" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="We5-kc-yqk"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Request List User's group"/>
+                                <connections>
+                                    <action selector="tapButtonToSendRequestAllUsersGroup:" destination="e5z-p9-cYJ" eventType="touchUpInside" id="L77-QT-dyB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sGx-3r-nVX"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="sGx-3r-nVX" firstAttribute="trailing" secondItem="aPC-1k-QV4" secondAttribute="trailing" constant="20" id="3Wj-6s-CZ9"/>
+                            <constraint firstItem="aLz-CS-oH2" firstAttribute="leading" secondItem="sGx-3r-nVX" secondAttribute="leading" id="6EA-ux-6d5"/>
+                            <constraint firstItem="pKF-fG-ju8" firstAttribute="top" secondItem="ypR-Yt-6nu" secondAttribute="bottom" constant="8" symbolic="YES" id="6ao-2a-oSf"/>
+                            <constraint firstItem="ypR-Yt-6nu" firstAttribute="top" secondItem="aLz-CS-oH2" secondAttribute="bottom" constant="8" symbolic="YES" id="ES8-88-HA4"/>
+                            <constraint firstItem="aPC-1k-QV4" firstAttribute="leading" secondItem="sGx-3r-nVX" secondAttribute="leading" constant="20" id="Fxy-vE-3YU"/>
+                            <constraint firstItem="aLz-CS-oH2" firstAttribute="bottom" secondItem="sGx-3r-nVX" secondAttribute="bottom" constant="-300" id="K5L-QN-XSc"/>
+                            <constraint firstItem="ypR-Yt-6nu" firstAttribute="leading" secondItem="sGx-3r-nVX" secondAttribute="leading" constant="20" id="T5V-Qy-fhd"/>
+                            <constraint firstItem="uKo-C3-8XU" firstAttribute="top" secondItem="pKF-fG-ju8" secondAttribute="bottom" constant="8" symbolic="YES" id="cPP-sX-6dX"/>
+                            <constraint firstItem="uKo-C3-8XU" firstAttribute="leading" secondItem="sGx-3r-nVX" secondAttribute="leading" constant="20" id="dCV-Xe-r74"/>
+                            <constraint firstItem="sGx-3r-nVX" firstAttribute="trailing" secondItem="ypR-Yt-6nu" secondAttribute="trailing" constant="20" id="dzt-Q9-hvd"/>
+                            <constraint firstItem="sGx-3r-nVX" firstAttribute="trailing" secondItem="pKF-fG-ju8" secondAttribute="trailing" constant="20" id="eLl-72-J8p"/>
+                            <constraint firstItem="aLz-CS-oH2" firstAttribute="trailing" secondItem="sGx-3r-nVX" secondAttribute="trailing" id="gka-SC-KS8"/>
+                            <constraint firstItem="sGx-3r-nVX" firstAttribute="trailing" secondItem="uKo-C3-8XU" secondAttribute="trailing" constant="20" id="nh5-fb-b6F"/>
+                            <constraint firstItem="pKF-fG-ju8" firstAttribute="leading" secondItem="sGx-3r-nVX" secondAttribute="leading" constant="20" id="rvQ-1w-4aj"/>
+                            <constraint firstItem="aPC-1k-QV4" firstAttribute="top" secondItem="uKo-C3-8XU" secondAttribute="bottom" constant="8" symbolic="YES" id="ssM-zs-Kat"/>
+                            <constraint firstItem="aLz-CS-oH2" firstAttribute="top" secondItem="sGx-3r-nVX" secondAttribute="top" id="wS3-MX-bng"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="SearchTextField" destination="ypR-Yt-6nu" id="NDh-aw-r48"/>
+                        <outlet property="VKWebWiev" destination="aLz-CS-oH2" id="n1E-tF-gfm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WeT-vb-5bD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-600" y="-632.39740820734346"/>
         </scene>
         <!--StartLoginView-->
         <scene sceneID="avc-Av-mmY">
@@ -739,6 +829,9 @@
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
